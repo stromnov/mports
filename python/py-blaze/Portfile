@@ -1,0 +1,46 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+PortGroup           python 1.0
+
+github.setup        ContinuumIO blaze-core 481a3e0551
+
+name                py-blaze
+version             0.0
+revision            3
+categories-append   devel
+platforms           darwin
+license             BSD
+
+python.versions     26 27
+
+maintainers         stromnov openmaintainer
+
+description         Blaze is the next-generation of NumPy
+
+long_description    Blaze is the next-generation of NumPy. It is designed \
+                    as a foundational set of abstractions on which to build \
+                    out-of-core and distributed algorithms over a wide \
+                    variety of data sources and to extend the structure \
+                    of NumPy itself.
+
+homepage            http://blaze.pydata.org/
+
+checksums           rmd160  c34494cf6621d5576e6c7851fb1a9f59c176d776 \
+                    sha256  b78f0f5af0f425c6202f0d67971435855a31dd342fe4a4fe88e7d090735aaaf6
+
+if {$subport != $name} {
+    depends_lib-append  port:py${python.version}-numpy \
+                        port:py${python.version}-llvmpy \
+                        port:py${python.version}-cython \
+                        port:py${python.version}-ply \
+                        port:py${python.version}-numba
+
+    post-patch {
+        file mkdir ${worksrcpath}/blaze/compile
+    }
+
+    livecheck.type      none
+}
