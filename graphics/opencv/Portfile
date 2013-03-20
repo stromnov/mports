@@ -161,7 +161,7 @@ variant opencl description {Enable OpenCL support.} {
 
 variant openni description {Enable OpenNI support.} {
     depends_lib-append          port:openni
-    patchfiles-append           patch-cmake-OpenCVFindOpenNI.cmake.diff
+    patchfiles-append           patch-cmake_OpenCVFindOpenNI.cmake.diff
     configure.args-delete       -DWITH_OPENNI=OFF
     configure.args-append       -DWITH_OPENNI=ON
 
