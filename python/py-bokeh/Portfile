@@ -1,0 +1,45 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+PortGroup           python 1.0
+
+github.setup        ContinuumIO Bokeh ccbcc016b8
+
+name                py-bokeh
+version             0.0.1
+revision            0
+categories-append   devel
+platforms           darwin
+license             BSD
+
+python.versions     26 27
+
+maintainers         stromnov openmaintainer
+
+description         Bokeh is an implementation of Grammar of Graphics
+
+long_description    Bokeh (pronounced boh-Kay) is an implementation of \
+                    Grammar of Graphics for Python, that also supports \
+                    the customized rendering flexibility of Protovis and d3.
+
+homepage            https://github.com/ContinuumIO/Bokeh
+
+checksums           rmd160  cb25521e6c465e41e84eafaf48ec57e5647c3902 \
+                    sha256  33c9761f654c7557110595b8d8956b1b2ffd2145636cd4b781055688fe133e9f
+
+if {$subport != $name} {
+    depends_lib-append  port:py${python.version}-chaco \
+                        port:py${python.version}-traits \
+                        port:py${python.version}-pandas \
+                        port:py${python.version}-flask \
+                        port:py${python.version}-redis \
+                        port:py${python.version}-requests
+
+    livecheck.type      none
+
+    #post-patch {
+    #    file mkdir ${worksrcpath}/blaze/compile
+    #}
+}
