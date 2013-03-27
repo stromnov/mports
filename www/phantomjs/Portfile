@@ -1,0 +1,51 @@
+# -*- coding:utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id: Portfile 103945 2013-03-10 19:23:12Z stromnov@macports.org $
+
+PortSystem          1.0
+
+name                phantomjs
+version             1.9.0
+categories          www
+license             BSD
+platforms           darwin
+maintainers         nomaintainer
+
+homepage            http://www.phantomjs.org/
+master_sites        googlecode
+
+description         minimalistic headless WebKit
+long_description \
+    PhantomJS is a minimalistic headless WebKit. \
+    \
+    It has fast and native support for various web standards: \
+    DOM handling, CSS selector, JSON, Canvas, and SVG. \
+    \
+    PhantomJS can be fully scripted using JavaScript. It is an optimal \
+    solution for headless testing of web-based applications, site \
+    scraping, pages capture, SVG renderer, PDF converter and many other \
+    usages.
+
+use_zip             yes
+distname            ${name}-${version}-source
+worksrcdir          ${name}-${version}
+
+checksums           rmd160  5b7607eb4dd26a66f35bed03128cfdae1cc3c36c \
+                    sha256  f51ebd98df9fd628544b719b41bb5b42a180afa603888c62a04e5e5ace588d0b
+
+patchfiles          patch-build.diff
+
+use_configure       no
+
+build.cmd           ./build.sh
+build.target
+build.args          --confirm \
+                    --jobs ${build.jobs}
+
+destroot    {
+    set docdir ${prefix}/share/doc/${name}
+    xinstall -d ${destroot}${docdir}
+
+    xinstall -m 755 ${worksrcpath}/bin/${name} ${destroot}${prefix}/bin/${name}
+    xinstall -W ${worksrcpath} ChangeLog README.md ${destroot}${docdir}
+    move ${worksrcpath}/examples ${destroot}${docdir}/examples
+}
