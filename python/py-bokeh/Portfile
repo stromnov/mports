@@ -9,7 +9,7 @@ github.setup        ContinuumIO Bokeh 49dcd18995
 
 name                py-bokeh
 version             0.0.1
-revision            0
+revision            1
 categories-append   devel
 platforms           darwin
 license             BSD
