@@ -190,5 +190,6 @@ post-destroot {
     }
 }
 
-livecheck.url http://www.shogun-toolbox.org
-livecheck.regex {SHOGUN Version ([0-9.]+).*}
+livecheck.type      regex
+livecheck.url       http://www.shogun-toolbox.org
+livecheck.regex     {SHOGUN ([0-9.]+)}
