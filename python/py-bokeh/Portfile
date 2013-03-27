@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 PortGroup           python 1.0
 
-github.setup        ContinuumIO Bokeh ccbcc016b8
+github.setup        ContinuumIO Bokeh 49dcd18995
 
 name                py-bokeh
 version             0.0.1
@@ -26,8 +26,8 @@ long_description    Bokeh (pronounced boh-Kay) is an implementation of \
 
 homepage            https://github.com/ContinuumIO/Bokeh
 
-checksums           rmd160  cb25521e6c465e41e84eafaf48ec57e5647c3902 \
-                    sha256  33c9761f654c7557110595b8d8956b1b2ffd2145636cd4b781055688fe133e9f
+checksums           rmd160  89535f0a2a537ba416727b885f0e6a64d39a0a1f \
+                    sha256  ae2d9410e14732035bef81e54029d5487804688ef162e21fc2dbaf899c049bd5
 
 if {$subport != $name} {
     depends_lib-append  port:py${python.version}-chaco \
