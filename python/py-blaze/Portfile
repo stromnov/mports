@@ -5,11 +5,11 @@ PortSystem          1.0
 PortGroup           github 1.0
 PortGroup           python 1.0
 
-github.setup        ContinuumIO blaze-core 481a3e0551
+github.setup        ContinuumIO blaze-core 780dafc1ee
 
 name                py-blaze
 version             0.0
-revision            3
+revision            4
 categories-append   devel
 platforms           darwin
 license             BSD
@@ -28,8 +28,8 @@ long_description    Blaze is the next-generation of NumPy. It is designed \
 
 homepage            http://blaze.pydata.org/
 
-checksums           rmd160  c34494cf6621d5576e6c7851fb1a9f59c176d776 \
-                    sha256  b78f0f5af0f425c6202f0d67971435855a31dd342fe4a4fe88e7d090735aaaf6
+checksums           rmd160  5f0543b4b415659373053f47a5dadf1ab601e66b \
+                    sha256  e3bc7094a63fa8b7920aafa111d8a9d5ce79dd4fc7da922e70453198bb585bd1
 
 if {$subport != $name} {
     depends_lib-append  port:py${python.version}-numpy \
