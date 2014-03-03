@@ -91,18 +91,13 @@ configure.args-append   -DOTB_USE_EXTERNAL_EXPAT=ON \
 
 # Use internal ITK (MacPorts ITK is outdated, and internal ITK is patched)
 configure.args-append   -DOTB_USE_EXTERNAL_ITK=OFF \
-                        -DITK_USE_REVIEW=ON \
-                        -DITK_USE_OPTIMIZED_REGISTRATION_METHODS=ON \
-                        -DOTB_USE_PATENTED=OFF \
-                        -DITK_USE_PATENTED=OFF
+                        -DOTB_USE_PATENTED=OFF
 
 # Use internal openjpeg (OTB needs 2.0 API, but does not support using the external lib yet)
 configure.args-append   -DOTB_USE_JPEG2000=ON
 
 # Use internal libs (no MacPorts alternatives available)
 configure.args-append   -DOTB_USE_EXTERNAL_OPENTHREADS=OFF \
-                        -DOTB_USE_LIBLAS=ON \
-                        -DOTB_USE_EXTERNAL_LIBLAS=OFF \
                         -DOTB_USE_EXTERNAL_OSSIM=OFF \
                         -DOTB_USE_SIFTFAST=ON
 
