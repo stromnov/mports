@@ -40,18 +40,16 @@ depends_lib-append  port:tiff \
                     port:libgeotiff \
                     port:gdal \
                     port:expat \
-                    port:fltk-devel \
                     port:boost \
                     port:curl \
                     port:libkml \
                     port:tinyxml \
                     port:muparser \
-                    port:gettext \
                     port:opencv \
                     port:fftw-3
 
 pre-build {
-    foreach c {libsvm openjpeg15 OpenSceneGraph} {
+    foreach c {libsvm openjpeg15 OpenSceneGraph InsightToolkit} {
         if { ![catch {set installed [lindex [registry_active $c] 0]}]} {
             ui_msg "OrfeoToolbox will fail to build because the '$c' port is active. Deactivate"
             ui_msg "'$c' by running 'port deactivate $c' and try again. You may reactivate"
@@ -77,9 +75,6 @@ configure.args-append   ../${distname}/ \
 configure.args-delete   -DCMAKE_INSTALL_NAME_DIR=${prefix}/lib
 configure.args-append   -DCMAKE_INSTALL_NAME_DIR=${prefix}/lib/otb
 
-# Use external FLTK (internal version is broken)
-configure.args-append   -DOTB_USE_EXTERNAL_FLTK=ON
-
 # Use external libs, where available
 configure.args-append   -DOTB_USE_EXTERNAL_EXPAT=ON \
                         -DOTB_USE_EXTERNAL_BOOST=ON \
@@ -89,7 +84,7 @@ configure.args-append   -DOTB_USE_EXTERNAL_EXPAT=ON \
                         -DOTB_USE_CURL=ON \
                         -DOTB_USE_OPENCV=ON
 
-# Use internal ITK (MacPorts ITK is outdated, and internal ITK is patched)
+# Use internal ITK (MacPorts ITK is outdated)
 configure.args-append   -DOTB_USE_EXTERNAL_ITK=OFF \
                         -DOTB_USE_PATENTED=OFF
 
