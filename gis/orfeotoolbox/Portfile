@@ -6,7 +6,7 @@ PortGroup           cmake 1.0
 PortGroup           qt4 1.0
 
 name                orfeotoolbox
-version             4.0-rc1
+version             4.0.0
 revision            0
 categories          gis graphics
 platforms           darwin
@@ -29,8 +29,8 @@ master_sites        http://orfeo-toolbox.org/packages/
 distname            OTB-${version}
 extract.suffix      .tgz
 
-checksums           rmd160  86cc970ffabc700fa6c114c4192736f9434dd1af \
-                    sha256  20daa62589afacc9072a49ae7e12330a1251c77a0c8136ab9d2bf2580bff15e1
+checksums           rmd160  90ee3e47a79e2bee9525c1a9cbfa050a78e1c360 \
+                    sha256  9875484139b785163c0f0e19e76d458f598fd076b80d0d0aa0e3b59cafcad98e
 
 worksrcdir          ${worksrcdir}/../build
 patch.dir           ${workpath}/${distname}
@@ -62,6 +62,8 @@ pre-build {
 post-extract {
     file mkdir ${worksrcpath}
 }
+
+patchfiles-append       patch-Code_ApplicationEngine_otbWrapperApplication.h.diff
 
 use_parallel_build      no
 
