@@ -1,0 +1,23 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+PortGroup           cmake 1.0
+
+github.setup        martijnberger clew 1a10eb29d6e0ef0c78783c70fea2161b2f91797b
+
+version             20151002
+categories          devel
+platforms           darwin
+license             BSD
+
+maintainers         stromnov openmaintainer
+
+description         The OpenCL Extension Wrangler Library
+long_description    ${description}
+
+checksums           rmd160  831eadb8675a06909643626e9650464021577b35 \
+                    sha256  a9e322d14d0c685e1a7b30598af4dd7deb1936776aab666df0f17b664bf7fa92
+
+cmake.out_of_source yes
