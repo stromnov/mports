@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2015-11-30 10:57:16.000000000 +0300
++++ CMakeLists.txt	2015-11-30 10:56:29.000000000 +0300
+@@ -369,7 +369,7 @@
+ if(WIN32)
+   set(destdir CMake)
+ else()
+-  set(destdir lib${SUFFIX_LIB}/cmake/clBLAS)
++  set(destdir %%CMAKE_MODULE_DIR%%/clBLAS)
+ endif()
+ string(REGEX REPLACE "[^/]+" ".." reldir "${destdir}")
+ configure_file(
