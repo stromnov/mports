@@ -1,0 +1,37 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+PortGroup           python 1.0
+
+github.setup        hughperkins DeepCL 8.2.1 v
+
+name                py-deepcl
+categories-append   devel math
+platforms           darwin
+license             MPL
+
+python.versions     27 35
+
+maintainers         stromnov openmaintainer
+
+description         Python wrapper for DeepCL library
+long_description    ${description}
+
+checksums           rmd160  9de2f9af32457aba221e58e22c7c1f75e7bec5de \
+                    sha256  a4cf10d5d7ac62947de1abd37f01e8cc16cb8343cd920003be6f76e77c824106
+
+if {${name} ne ${subport}} {
+    patchfiles-append   patch-setup.py.diff
+
+    post-patch {
+        reinplace "s|@prefix@|${prefix}|g" ${worksrcpath}/setup.py
+    }
+
+    depends_lib-append  port:deepcl
+
+    worksrcdir          DeepCL-${version}/python
+
+    livecheck.type      none
+}
