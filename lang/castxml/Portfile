@@ -1,0 +1,53 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           cmake 1.0
+PortGroup           cxx11 1.0
+PortGroup           github 1.0
+PortGroup           compiler_blacklist_versions 1.0
+
+github.setup        CastXML CastXML f57109f31b94d0410e091a549a4aa0febc4140d6
+
+name                castxml
+version             20151212
+revision            0
+categories          lang
+platforms           darwin
+license             Apache-2
+
+maintainers         stromnov openmaintainer
+
+description         CastXML is a C-family abstract syntax tree XML output tool.
+long_description    ${description}
+
+checksums           rmd160  78e628857fd24215b60ab7a91477217cce577e7a \
+                    sha256  a8a7fa91221ded0346c2450778e6098ac48e04c6012242500213174b137cffa7
+
+cmake.out_of_source yes
+
+depends_lib-append  port:zlib \
+                    port:libffi \
+                    port:libedit \
+                    port:ncurses
+
+configure.args-append \
+                    -DCastXML_INSTALL_DOC_DIR=share/doc/castxml
+
+variant clang36 conflicts clang37 description {Use clang 3.6 toolchain.} {
+    depends_build-append \
+                        port:clang-3.6
+    configure.args-append \
+                        -DLLVM_DIR=${prefix}/libexec/llvm-3.6/share/llvm/cmake
+}
+
+variant clang37 conflicts clang36 description {Use clang 3.7 toolchain.} {
+    depends_build-append \
+                        port:clang-3.7
+    configure.args-append \
+                        -DLLVM_DIR=${prefix}/libexec/llvm-3.7/share/llvm/cmake
+}
+
+if {![variant_isset clang36] && ![variant_isset clang37]} {
+    default_variants +clang36
+}
