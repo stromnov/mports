@@ -1,0 +1,45 @@
+--- CMakeLists.txt.orig	2015-11-22 05:27:21.000000000 +0300
++++ CMakeLists.txt	2016-01-12 01:03:59.000000000 +0300
+@@ -230,21 +230,12 @@
+ endif()
+ include_directories( thirdparty/gtest )
+ 
+-add_executable( deepcl_unittests ${UNITTEST_SOURCES} test/gtest_main.cpp test/GtestGlobals.cpp
+-    test/TestArgsParser.cpp )
+-target_link_libraries( deepcl_unittests deepcl_gtest )
+-
+ if( PROTOTYPING )
+     add_executable( clconvolve-fixedweights prototyping/clconvolve-fixedweights.cpp src/util/stringhelper.cpp )
+     add_executable( learn_scenario_image prototyping/qlearning/learnScenarioImage.cpp 
+         prototyping/qlearning/ScenarioImage.cpp )
+ endif( PROTOTYPING )
+ 
+-target_link_libraries( deepcl_unittests DeepCL )
+-
+-add_executable( testgtestsupp test/testgtestsupp.cpp thirdparty/gtest/gtest_main.cc )
+-target_link_libraries( testgtestsupp deepcl_gtest )
+-
+ if(BUILD_PYTHON_WRAPPERS)
+     add_subdirectory(python)
+ #    add_dependencies(PyDeepCL DeepCL)
+@@ -252,10 +243,8 @@
+ endif()
+ 
+ INSTALL( DIRECTORY src/ DESTINATION include/deepcl FILES_MATCHING PATTERN *.h )
+-INSTALL(PROGRAMS src/activate.sh DESTINATION bin)
+-INSTALL(PROGRAMS src/activate.bat DESTINATION bin)
+ #INSTALL( DIRECTORY EasyCL/ DESTINATION include/easycl FILES_MATCHING PATTERN *.h )
+-INSTALL( TARGETS DeepCL deepcl_train deepcl_predict deepcl_unittests deepcl_gtest
++INSTALL( TARGETS DeepCL deepcl_train deepcl_predict
+     EXPORT DeepCLTargets
+     RUNTIME DESTINATION bin
+     ARCHIVE DESTINATION lib
+@@ -269,7 +258,7 @@
+ if(WIN32 AND NOT CYGWIN)
+   set(DEF_INSTALL_CMAKE_DIR CMake)
+ else()
+-  set(DEF_INSTALL_CMAKE_DIR lib/cmake/DeepCL)
++  set(DEF_INSTALL_CMAKE_DIR @cmake_share_module_dir@/DeepCL)
+ endif()
+ set(INSTALL_CMAKE_DIR ${DEF_INSTALL_CMAKE_DIR})
+  
