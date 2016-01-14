@@ -1,11 +1,21 @@
---- CMakeLists.txt.orig	2015-11-30 10:57:16.000000000 +0300
-+++ CMakeLists.txt	2015-11-30 10:56:29.000000000 +0300
-@@ -369,7 +369,7 @@
+--- CMakeLists.txt.orig	2016-01-05 20:04:55.000000000 +0300
++++ CMakeLists.txt	2016-01-14 20:22:22.000000000 +0300
+@@ -270,9 +270,7 @@
+ 
+ # Find Boost on the system, and configure the type of boost build we want
+ set( Boost_USE_MULTITHREADED ON )
+-set( Boost_USE_STATIC_LIBS   ON )
+ set( Boost_DETAILED_FAILURE_MSG   ON )
+-set( Boost_DEBUG ON )
+ set( Boost_ADDITIONAL_VERSIONS "1.44.0" "1.44" "1.47.0" "1.47" )
+ 
+ find_package( Boost 1.33.0 COMPONENTS program_options )
+@@ -369,7 +367,7 @@
  if(WIN32)
    set(destdir CMake)
  else()
 -  set(destdir lib${SUFFIX_LIB}/cmake/clBLAS)
-+  set(destdir %%CMAKE_MODULE_DIR%%/clBLAS)
++  set(destdir share/cmake/Modules/clBLAS)
  endif()
  string(REGEX REPLACE "[^/]+" ".." reldir "${destdir}")
  configure_file(

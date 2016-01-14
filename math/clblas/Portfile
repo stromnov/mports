@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 PortGroup           cmake 1.0
 
-github.setup        clMathLibraries clBLAS 2.8 v
+github.setup        clMathLibraries clBLAS 2.10 v
 
 name                clblas
 categories          math
@@ -17,13 +17,14 @@ maintainers         stromnov openmaintainer
 description         A software library containing BLAS functions written in OpenCL
 long_description    ${description}
 
-checksums           rmd160  f39e65409bd67c0fb89b83e354d59c7a01c26ebb \
-                    sha256  3fa1e960a5695856922a50fae7279768a3190ec81793561e5d4fe72fe9790793
+checksums           rmd160  7ab487e64e2d4d17639a35afbc217d57ce404d80 \
+                    sha256  849423c86cc89e0cdbcc498c5328370468fafe5828fd4b6bdd2e1206497d646f
 
 worksrcdir          ${distname}/src
 
 patchfiles-append   patch-CMakeLists.txt.diff \
                     patch-clBLASConfig.cmake.in.diff \
+                    patch-AutoGemmPreCompileKernels.cpp.diff \
                     patch-PR189.diff
 
 cmake.out_of_source yes
