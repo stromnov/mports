@@ -2,9 +2,10 @@
 # $Id: Portfile 132957 2015-02-16 02:08:58Z mmoll@macports.org $
 
 PortSystem          1.0
+PortGroup           cmake 1.0
 
 name                glm
-version             0.9.6.3
+version             0.9.7.2
 categories          devel math
 platforms           darwin
 license             MIT
@@ -18,26 +19,22 @@ long_description    OpenGL Mathematics (GLM) is a header only C++ \
                     on the OpenGL Shading Language (GLSL) specification.
 
 homepage            http://glm.g-truc.net/
-master_sites        sourceforge:project/ogl-math/${name}-${version}
+master_sites        https://github.com/g-truc/glm/releases/download/${version}/
 
-checksums           md5     acd0b517c37ed25c3f11ee155ee8257e \
-                    sha1    fb3cf9cc21cc87546fb94fa9e1773b1e4bf87cd5 \
-                    rmd160  60ec79d1644aca8167d23d867dd393315f01891c
+checksums           rmd160  f0677434c2cfe57759402811eb770649aaf419b1 \
+                    sha256  bc3d0342602c246713bba36ec9eba955c1663dd76a2919079e403c157b26b53b
 
 use_zip             yes
 
-use_configure       no
-
-build {}
-
 worksrcdir          ${name}
 
-destroot {
-    copy ${worksrcpath}/${name} ${destroot}${prefix}/include/${name}
-    delete ${destroot}${prefix}/include/${name}/CMakeLists.txt
-    xinstall -d ${destroot}${prefix}/share/doc
-    copy ${worksrcpath}/doc ${destroot}${prefix}/share/doc/${name}
+patchfiles-append   patch-CMakeLists.txt
+
+post-patch {
+    reinplace "s|@cmake_modules_dir@|share/cmake/Modules|" ${worksrcpath}/CMakeLists.txt
 }
+
+cmake.out_of_source yes
 
 livecheck.type      regex
 livecheck.url       https://github.com/g-truc/glm/releases
