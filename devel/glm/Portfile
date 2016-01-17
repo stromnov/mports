@@ -40,5 +40,5 @@ destroot {
 }
 
 livecheck.type      regex
-livecheck.url       http://sourceforge.net/projects/ogl-math/files/
-livecheck.regex     "${name}-(\[0-9.\]+\[0-9\])"
+livecheck.url       https://github.com/g-truc/glm/releases
+livecheck.regex     "(\[0-9.\]+\[0-9\])/${name}"
