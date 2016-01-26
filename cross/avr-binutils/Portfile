@@ -4,11 +4,12 @@
 PortSystem          1.0
 PortGroup           crossbinutils 1.0
 
-crossbinutils.setup avr 2.25.1
+crossbinutils.setup avr 2.26
+
 maintainers         g5pw openmaintainer
 
-checksums           rmd160  5756c6163a11964347e32d1b2805e97e74ff5e3f \
-                    sha256  b5b14added7d78a8d1ca70b5cb75fef57ce2197264f4f5835326b0df22ac9f22
+checksums           rmd160  ce0400ffcc1200280854fefb29f97b63507bad14 \
+                    sha256  c2ace41809542f5237afc7e3b8f32bb92bc7bc53c6232a84463c423b0714ecd9
 
 # The build system doesn't install libiberty, even though
 # crossbinutils-1.0 tells it to.
