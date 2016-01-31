@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           cmake 1.0
 
 name                vtk
-version             6.3.0
+version             7.0.0
 revision            0
 categories          graphics devel
 platforms           darwin
@@ -26,8 +26,8 @@ master_sites        http://www.vtk.org/files/release/${branch}
 
 distname            VTK-${version}
 
-checksums           rmd160  c14df81322961e6c4617b1b50fb9a2b1d574d3ce \
-                    sha256  92a493354c5fa66bea73b5fc014154af5d9f3f6cee8d20a826f4cd5d4b0e8a5e
+checksums           rmd160  94b4865f9cb371203039470dcbc5c068b12ab720 \
+                    sha256  78a990a15ead79cdc752e86b83cfab7dbf5b7ef51ba409db02570dbdd9ec32c3
 
 cmake.out_of_source yes
 
