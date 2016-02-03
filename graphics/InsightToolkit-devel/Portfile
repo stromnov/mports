@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           cmake 1.0
 
 name                InsightToolkit-devel
-version             4.8.2
+version             4.9.0
 revision            0
 categories          graphics devel
 platforms           darwin
@@ -25,8 +25,8 @@ master_sites        sourceforge:itk
 
 distname            InsightToolkit-${version}
 
-checksums           rmd160  d42f13e86b11381409a4fca16458d0c871ff3d41 \
-                    sha256  d8d5e3aea700588c60b01418c440b2d95b517ea18dd4c834c5164354e53596af
+checksums           rmd160  724e8b37b9fba26ca7575101021a0f97621019d7 \
+                    sha256  4aa26e3cd3503b08e92a16e812d2be474275b218d015143a9e890063eb0f4f5b
 
 patchfiles-append   patch-CMakeLists.txt.diff
 
