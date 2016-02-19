@@ -5,9 +5,9 @@ PortSystem          1.0
 PortGroup           github 1.0
 PortGroup           cmake 1.0
 
-github.setup        martijnberger clew 1a10eb29d6e0ef0c78783c70fea2161b2f91797b
+github.setup        martijnberger clew 14bd5f43a8a62c75a70846aa431f12d9b15123d8
 
-version             20151002
+version             20160214
 categories          devel
 platforms           darwin
 license             BSD
@@ -17,7 +17,7 @@ maintainers         stromnov openmaintainer
 description         The OpenCL Extension Wrangler Library
 long_description    ${description}
 
-checksums           rmd160  831eadb8675a06909643626e9650464021577b35 \
-                    sha256  a9e322d14d0c685e1a7b30598af4dd7deb1936776aab666df0f17b664bf7fa92
+checksums           rmd160  49b80777234cf3786709bf85c825485d664eb23b \
+                    sha256  733cb241fdd95665bd36d78390c12dc6c0367fa1ca250972cd2977a62b9b6b01
 
 cmake.out_of_source yes
