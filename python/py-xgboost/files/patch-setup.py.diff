@@ -1,0 +1,9 @@
+--- setup.py.orig	2016-03-12 22:51:58.000000000 +0300
++++ setup.py	2016-03-12 22:53:12.000000000 +0300
+@@ -36,5 +36,5 @@
+       #this will use MANIFEST.in during install where we specify additional files,
+       #this is the golden line
+       include_package_data=True,
+-      data_files=[('xgboost', LIB_PATH)],
++      #data_files=[('xgboost', LIB_PATH)],
+       url='https://github.com/dmlc/xgboost')

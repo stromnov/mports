@@ -1,0 +1,11 @@
+--- xgboost/libpath.py.orig	2016-03-12 21:16:54.000000000 +0300
++++ xgboost/libpath.py	2016-03-12 21:17:41.000000000 +0300
+@@ -20,7 +20,7 @@
+     """
+     curr_path = os.path.dirname(os.path.abspath(os.path.expanduser(__file__)))
+     # make pythonpack hack: copy this directory one level upper for setup.py
+-    dll_path = [curr_path, os.path.join(curr_path, '../../lib/'),
++    dll_path = ['@prefix@/lib', curr_path, os.path.join(curr_path, '../../lib/'),
+                 os.path.join(curr_path, './lib/')]
+     if os.name == 'nt':
+         if platform.architecture()[0] == '64bit':
