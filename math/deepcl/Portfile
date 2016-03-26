@@ -1,0 +1,35 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id: Portfile 140315 2015-09-17 08:29:01Z stromnov@macports.org $
+
+PortSystem          1.0
+PortGroup           github 1.0
+PortGroup           cmake 1.0
+
+github.setup        hughperkins DeepCL 8.3.1 v
+
+name                deepcl
+categories          math science devel
+platforms           darwin
+license             MPL
+
+maintainers         stromnov openmaintainer
+
+description         OpenCL library to train deep convolutional neural networks
+long_description    ${description}
+
+checksums           rmd160  e139fa0e7ad561e4df381657ababf64cd6d27ffc \
+                    sha256  ac0d47456e411d17d20cc1df0c1c678d8f258281436a5f985f359967319c44fe
+
+depends_lib-append  port:easycl \
+                    port:clblas \
+                    port:jpeg
+
+patchfiles-append   patch-CMakeLists.txt.diff \
+                    patch-cmake_build_EasyCL.cmake.diff \
+                    patch-cmake_build_clBLAS.cmake.diff
+
+post-patch {
+    reinplace "s|@cmake_share_module_dir@|${cmake_share_module_dir}|g" ${worksrcpath}/CMakeLists.txt
+}
+
+cmake.out_of_source yes
