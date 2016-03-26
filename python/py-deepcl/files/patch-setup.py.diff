@@ -1,6 +1,15 @@
---- setup.py.orig	2016-01-12 01:36:10.000000000 +0300
-+++ setup.py	2016-01-12 01:38:40.000000000 +0300
-@@ -58,8 +58,6 @@
+--- setup.py.orig	2016-03-23 15:31:08.000000000 +0300
++++ setup.py	2016-03-26 23:46:11.000000000 +0300
+@@ -56,7 +56,7 @@
+ 
+ compile_options.append('-DUSE_CLEW')
+ 
+-include_dirs = []
++include_dirs = ['@prefix@/include/deepcl', '@prefix@/include/easycl']
+ 
+ runtime_library_dirs = []
+ libraries = []
+@@ -65,8 +65,6 @@
  libraries.append('DeepCL')
  
  library_dirs = []
@@ -9,12 +18,3 @@
  
  if osfamily == 'Linux':
      runtime_library_dirs = ['.']
-@@ -73,7 +71,7 @@
- ext_modules = [
-     Extension("PyDeepCL",
-               sources=sources,
--              include_dirs=['mysrc', 'mysrc/lua', '/usr/local/include/deepcl', '/usr/local/include/easycl'],
-+              include_dirs=['@prefix@/include/deepcl', '@prefix@/include/easycl'],
-               library_dirs=library_dirs,
-               libraries=libraries,
-               extra_compile_args=compile_options,
