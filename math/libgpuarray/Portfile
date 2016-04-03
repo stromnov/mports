@@ -1,0 +1,28 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           cmake 1.0
+PortGroup           github 1.0
+
+github.setup        Theano libgpuarray c59a170fa5e4063ccf8308049958f86dc6519526
+
+version             20160331
+revision            0
+categories          math devel
+platforms           darwin
+license             MIT
+
+maintainers         stromnov openmaintainer
+
+description         Library to manipulate tensors on the GPU.
+long_description    ${description}
+
+checksums           rmd160  cf39f87a2b8efc0773be8b38e51314eb1b236d52 \
+                    sha256  60b68e639213e612567af9fffdf23bde9ac5f4e2d10700c2f83243aad9394d57
+
+cmake.out_of_source yes
+
+depends_build-append \
+                    port:pkgconfig
+depends_lib-append  port:clblas
