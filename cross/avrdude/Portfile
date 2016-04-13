@@ -4,7 +4,7 @@
 PortSystem 1.0
 
 name              avrdude
-version           6.2
+version           6.3
 revision          0
 categories        cross devel
 maintainers       g5pw openmaintainer
@@ -19,8 +19,8 @@ platforms         darwin
 license           GPL-2
 master_sites      http://download.savannah.gnu.org/releases/avrdude/
 
-checksums         rmd160  dfc15d9e0cc4e7c4dfcb22d1a3b9e4faaeccdba8 \
-                  sha256  e65f833493b7d63a4436c7056694a0f04ae5b437b72cc084e32c58bc543b0f91
+checksums         rmd160  245c20fa6f6be274093f43fa4932295ea47dafaa \
+                  sha256  0f9f731b6394ca7795b88359689a7fa1fba818c6e1d962513eb28da670e0a196
 
 depends_lib       port:libusb \
                   port:ncurses \
