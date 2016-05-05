@@ -12,7 +12,7 @@ categories          math
 platforms           darwin
 license             Permissive
 
-maintainers         mmoll
+maintainers         mmoll openmaintainer
 
 description         Programs and library for computing convex hulls.
 
