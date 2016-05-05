@@ -5,9 +5,9 @@ PortSystem          1.0
 PortGroup           cxx11 1.0
 PortGroup           github 1.0
 
-github.setup        dmlc xgboost 59610c49dfe7469251df8c2c8a165ba6a7f9bdd9
+github.setup        dmlc xgboost b92e2252b0100f352fe2b8c86ea58a59f0edf6ef
 
-version             20160409
+version             20160504
 revision            0
 categories          math science
 platforms           darwin
