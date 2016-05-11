@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           cmake 1.0
 
 name                glm
-version             0.9.7.2
+version             0.9.7.4
 categories          devel math
 platforms           darwin
 license             MIT
@@ -21,8 +21,8 @@ long_description    OpenGL Mathematics (GLM) is a header only C++ \
 homepage            http://glm.g-truc.net/
 master_sites        https://github.com/g-truc/glm/releases/download/${version}/
 
-checksums           rmd160  f0677434c2cfe57759402811eb770649aaf419b1 \
-                    sha256  bc3d0342602c246713bba36ec9eba955c1663dd76a2919079e403c157b26b53b
+checksums           rmd160  f652576e88a871828551cd8d942c0faf203d4868 \
+                    sha256  d48a0d732776b0fbfd17f01c830a08b50f07a3226f0cab95fcca5591982a43f2
 
 use_zip             yes
 
