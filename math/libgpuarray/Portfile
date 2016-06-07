@@ -5,9 +5,9 @@ PortSystem          1.0
 PortGroup           cmake 1.0
 PortGroup           github 1.0
 
-github.setup        Theano libgpuarray 68d42654fb5ecf4f1146c7d864ca0e2e4fe75f9c
+github.setup        Theano libgpuarray 96c26bbc9740a47f537a9c554b3b1bd473733c84
 
-version             20160510
+version             20160607
 revision            0
 categories          math devel
 platforms           darwin
@@ -18,8 +18,8 @@ maintainers         stromnov openmaintainer
 description         Library to manipulate tensors on the GPU.
 long_description    ${description}
 
-checksums           rmd160  b385887665bf88548a0d43254fe3fdcee39a1426 \
-                    sha256  629465b64f31bc600f856bb5111db12ee7aa5b7776b05deed8e898ffc51630fa
+checksums           rmd160  ad975980c0185c26c447546e9cd6fa99156a239c \
+                    sha256  f9d0597bb6ce91d92cd591f3a5924171872d6541b219a12168b691ddae9d2019
 
 cmake.out_of_source yes
 
