@@ -7,7 +7,7 @@ PortGroup           select 1.0
 
 name                py-ipython
 version             5.0.0b2
-revision            0
+revision            1
 categories-append   devel science
 platforms           darwin
 license             BSD
@@ -38,13 +38,14 @@ if {${name} ne ${subport}} {
                         port:py${python.version}-pickleshare \
                         port:py${python.version}-simplegeneric \
                         port:py${python.version}-traitlets \
+                        port:py${python.version}-prompt_toolkit \
                         port:py${python.version}-pexpect \
                         port:py${python.version}-appnope \
                         port:py${python.version}-gnureadline \
-                        port:py${python.version}-prompt_toolkit
 
     if {${python.version} == 27} {
-        depends_lib-append  port:py${python.version}-backports-shutil_get_terminal_size
+        depends_lib-append  port:py${python.version}-backports-shutil_get_terminal_size \
+                            port:py${python.version}-pathlib2
     }
 
     variant parallel description "Support for parallel computing (deprecated variant)" {
