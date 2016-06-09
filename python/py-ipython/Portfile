@@ -7,7 +7,7 @@ PortGroup           select 1.0
 
 name                py-ipython
 version             5.0.0b2
-revision            1
+revision            2
 categories-append   devel science
 platforms           darwin
 license             BSD
@@ -42,6 +42,8 @@ if {${name} ne ${subport}} {
                         port:py${python.version}-pexpect \
                         port:py${python.version}-appnope \
                         port:py${python.version}-gnureadline \
+
+    patchfiles-append   patch-IPython_terminal_ptshell.py.diff
 
     if {${python.version} == 27} {
         depends_lib-append  port:py${python.version}-backports-shutil_get_terminal_size \
