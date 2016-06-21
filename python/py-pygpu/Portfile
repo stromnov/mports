@@ -5,10 +5,10 @@ PortSystem          1.0
 PortGroup           github 1.0
 PortGroup           python 1.0
 
-github.setup        Theano libgpuarray 96c26bbc9740a47f537a9c554b3b1bd473733c84
+github.setup        Theano libgpuarray ce305ceb9d93a124aa728d007bd04782937a58ec
 
 name                py-pygpu
-version             20160607
+version             20160614
 categories-append   devel math
 platforms           darwin
 license             MIT
@@ -20,8 +20,8 @@ maintainers         stromnov openmaintainer
 description         Python wrapper for libgpuarray library
 long_description    ${description}
 
-checksums           rmd160  ad975980c0185c26c447546e9cd6fa99156a239c \
-                    sha256  f9d0597bb6ce91d92cd591f3a5924171872d6541b219a12168b691ddae9d2019
+checksums           rmd160  c7b57138acd07a3ec89a04cdda5c5997769bf5c0 \
+                    sha256  3d3387496f520edf8bacf5e87b3f9ca872cf8eada29b7ff322ae3c4c47e7e3d4
 
 if {${name} ne ${subport}} {
     depends_build-append \
