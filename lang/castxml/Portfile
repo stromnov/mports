@@ -7,10 +7,10 @@ PortGroup           cxx11 1.0
 PortGroup           github 1.0
 PortGroup           compiler_blacklist_versions 1.0
 
-github.setup        CastXML CastXML 9a834141a84c4839949826c7f70b944ffea07b80
+github.setup        CastXML CastXML d5934bd08651dbda95a65ccadcc5f39637d7bc59
 
 name                castxml
-version             20160510
+version             20160617
 revision            0
 categories          lang
 platforms           darwin
@@ -21,8 +21,8 @@ maintainers         stromnov openmaintainer
 description         CastXML is a C-family abstract syntax tree XML output tool.
 long_description    ${description}
 
-checksums           rmd160  8ab398111e7d8a9409ccd910df8573747effbe22 \
-                    sha256  75f5fac56babbdca8da17fac8b617bbe291877914598e10abcf3c12897d08524
+checksums           rmd160  cb20736a6f19b48348f9a97beddad5b17b1a4544 \
+                    sha256  e414da488d0d6f6aed3087c89a6b6f8c2865a46d3b278753c432ea7e89b7629c
 
 cmake.out_of_source yes
 
