@@ -35,7 +35,7 @@ checksums           rmd160  d3c64223e586294d275e91daae21290f08a185eb \
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-cryptography \
-                        port:py${python.version}-pyasn1
+                        port:py${python.version}-asn1
 
     livecheck.type      none
 } else {
