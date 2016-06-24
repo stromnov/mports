@@ -1,0 +1,35 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           cxx11 1.0
+PortGroup           github 1.0
+
+github.setup        TALP-UPC FreeLing 4.0
+
+revision            0
+categories          textproc devel
+platforms           darwin
+license             GPL-3+
+
+maintainers         stromnov openmaintainer
+
+description         An open-source suite of language analyzers
+
+long_description    FreeLing is a library providing language analysis \
+                    services, oriented to satisfy the needs of Natural \
+                    Language Processing application developers.
+
+homepage            http://nlp.lsi.upc.edu/freeling/
+
+checksums           rmd160  e119448ab6d64b42a09a7aa40afa206ad8124780 \
+                    sha256  e0a359aa167de00d1527d4ca694053f9c0b647c440124c713400ae9b499ef380
+
+conflicts           hunspell
+
+use_autoreconf      yes
+
+depends_lib-append  port:zlib \
+                    port:boost
+
+livecheck.regex      {archive/(\d+(?:\.\d+)*)\.tar\.gz}
