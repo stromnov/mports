@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 PortGroup           python 1.0
 
-github.setup        fchollet keras 1.0.4
+github.setup        fchollet keras 1.0.5
 
 name                py-keras
 categories-append   devel math
@@ -19,8 +19,8 @@ maintainers         stromnov openmaintainer
 description         Deep Learning library for Theano and TensorFlow
 long_description    ${description}
 
-checksums           rmd160  1d3097abdfcc0178f87a88e852ef1a9f06f475ca \
-                    sha256  63800da60a7a8da1498f2654ab5bc1932c942e2d0696f54ff072a1d911fbbdcf
+checksums           rmd160  42f2ac8de1c690bc670cb9f546ce2989b1fb896d \
+                    sha256  6a7612cb3eff6240849c9e6c725dbeefcefe1399b1c0322f47a28b75d76c2c37
 
 if {${name} ne ${subport}} {
     depends_build-append \
