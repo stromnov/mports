@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-tpot
-version             0.4.1
+version             0.5.0
 revision            0
 categories-append   devel math science
 platforms           darwin
@@ -26,8 +26,8 @@ master_sites        pypi:T/TPOT
 
 distname            TPOT-${version}
 
-checksums           rmd160  7c3b34351fc1c8ca7f83b95a98d01847af1ca52f \
-                    sha256  352cd9471e14775beb44bac9c14e70412ee61053dcc422c96a9f912829075f6f
+checksums           rmd160  b1dafade0ea4f36261e82994924500753082f39d \
+                    sha256  aa238246a1fac3eab4c565bd53700ef92156991e15fad10def9f6d3e123bc728
 
 if {${name} ne ${subport}} {
     depends_build-append \
