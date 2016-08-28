@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-smart_open
-version             1.3.3
+version             1.3.4
 revision            0
 categories-append   textproc
 platforms           darwin
@@ -24,8 +24,8 @@ homepage            https://github.com/RaRe-Technologies/smart_open
 master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  bac1e552cfc14a28d5e4a3acf6e5c035bbe35b1b \
-                    sha256  ac4d36bcfd066749df13263b57bb52eabe4f7b6bb147ee761faf8d3b8d8c0a19
+checksums           rmd160  fcb8c53e607404e32150eda6ada3f4af600b1871 \
+                    sha256  f38f87af7d2361a41a030e1ed56c7904a920b9c78e8cb2c07156b984b424e877
 
 if {${name} ne ${subport}} {
     depends_build-append \
