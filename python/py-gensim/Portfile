@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-gensim
-version             0.13.1
+version             0.13.2
 categories-append   textproc
 platforms           darwin
 license             LGPL
@@ -26,8 +26,8 @@ homepage            http://radimrehurek.com/gensim/
 master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  f6277f7e6b84fd45deb8a9c9655f2cfcad473a4c \
-                    sha256  7937d4dac5fa7d25665ca8602835a635fdac9619f6e4c6f5dba71947152ebc76
+checksums           rmd160  42edd86b607e866d1588282651434ae7f7792049 \
+                    sha256  3671d2f35d71e2bb811f5e80b10092f3e4497e52e09bf7a29ea4d0b681e14c9d
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-numpy \
@@ -39,7 +39,7 @@ if {${name} ne ${subport}} {
         set docdir ${prefix}/share/doc/${subport}
         xinstall -d ${destroot}${docdir}
         xinstall -m 644 -W ${worksrcpath} \
-            CHANGELOG.txt COPYING README.rst \
+            CHANGELOG.md COPYING README.md \
             ${destroot}${docdir}
     }
 
