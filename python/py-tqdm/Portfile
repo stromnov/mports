@@ -6,7 +6,7 @@ PortGroup           python 1.0
 
 name                py-tqdm
 version             4.8.4
-revision            0
+revision            1
 categories-append   devel
 platforms           darwin
 license             MIT
@@ -28,15 +28,7 @@ checksums           rmd160  147c5bac063eabc38a227d79812aaf69ab342eff \
                     sha256  bab05f8bb6efd2702ab6c532e5e6a758a66c0d2f443e09784b73e4066e6b3a37
 
 if {${name} ne ${subport}} {
-    depends_build-append \
-                        port:py${python.version}-setuptools
-    depends_lib-append  port:py${python.version}-numpy \
-                        port:py${python.version}-scipy \
-                        port:py${python.version}-pandas \
-                        port:py${python.version}-scikit-learn \
-                        port:py${python.version}-update_checker \
-                        port:py${python.version}-xgboost \
-                        port:py${python.version}-deap
+    depends_lib-append  port:py${python.version}-setuptools
 
     livecheck.type      none
 } else {
