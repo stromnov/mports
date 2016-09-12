@@ -1,0 +1,44 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-tqdm
+version             4.8.4
+revision            0
+categories-append   devel
+platforms           darwin
+license             MIT
+supported_archs     noarch
+
+python.versions     27 35
+
+maintainers         stromnov openmaintainer
+
+description         A Fast, Extensible Progress Meter
+long_description    ${description}
+
+homepage            https://github.com/tqdm/tqdm
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  147c5bac063eabc38a227d79812aaf69ab342eff \
+                    sha256  bab05f8bb6efd2702ab6c532e5e6a758a66c0d2f443e09784b73e4066e6b3a37
+
+if {${name} ne ${subport}} {
+    depends_build-append \
+                        port:py${python.version}-setuptools
+    depends_lib-append  port:py${python.version}-numpy \
+                        port:py${python.version}-scipy \
+                        port:py${python.version}-pandas \
+                        port:py${python.version}-scikit-learn \
+                        port:py${python.version}-update_checker \
+                        port:py${python.version}-xgboost \
+                        port:py${python.version}-deap
+
+    livecheck.type      none
+} else {
+    livecheck.type      pypi
+}
