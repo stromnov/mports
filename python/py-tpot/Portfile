@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-tpot
-version             0.6.2
+version             0.6.4
 revision            0
 categories-append   devel math science
 platforms           darwin
@@ -26,19 +26,17 @@ master_sites        pypi:T/TPOT
 
 distname            TPOT-${version}
 
-checksums           rmd160  bfae631ce3199be64e65ff68f9405bd830cfd321 \
-                    sha256  3bf9bf4b9a84a0452d7dd57c666c6b9a61a99afdcde7618f3543c8c9f1d2a2e7
+checksums           rmd160  9ed86f7919b9b0dfca63e4bdd3543a5ebe9a4fdf \
+                    sha256  00e46e397d0d64dac7fba60b60890031b89e5e19b3cd80ee2e094c819315bbc4
 
 if {${name} ne ${subport}} {
-    depends_build-append \
-                        port:py${python.version}-setuptools
-    depends_lib-append  port:py${python.version}-numpy \
+    depends_lib-append  port:py${python.version}-setuptools \
+                        port:py${python.version}-numpy \
                         port:py${python.version}-scipy \
-                        port:py${python.version}-pandas \
                         port:py${python.version}-scikit-learn \
+                        port:py${python.version}-deap \
                         port:py${python.version}-update_checker \
-                        port:py${python.version}-xgboost \
-                        port:py${python.version}-deap
+                        port:py${python.version}-tqdm
 
     livecheck.type      none
 } else {
