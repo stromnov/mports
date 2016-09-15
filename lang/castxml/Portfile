@@ -7,10 +7,10 @@ PortGroup           cxx11 1.0
 PortGroup           github 1.0
 PortGroup           compiler_blacklist_versions 1.0
 
-github.setup        CastXML CastXML d5934bd08651dbda95a65ccadcc5f39637d7bc59
+github.setup        CastXML CastXML e1ee6852c79eddafa2ce1f134c097decd27aaa69
 
 name                castxml
-version             20160617
+version             20160831
 revision            0
 categories          lang
 platforms           darwin
@@ -21,8 +21,8 @@ maintainers         stromnov openmaintainer
 description         CastXML is a C-family abstract syntax tree XML output tool.
 long_description    ${description}
 
-checksums           rmd160  cb20736a6f19b48348f9a97beddad5b17b1a4544 \
-                    sha256  e414da488d0d6f6aed3087c89a6b6f8c2865a46d3b278753c432ea7e89b7629c
+checksums           rmd160  df5271e7925297cfd5a1179702850514cc9367e4 \
+                    sha256  bcce338041f58eb3a05a798fb17f9f4d69b66b4dbe22a24bd8237ab800be592d
 
 cmake.out_of_source yes
 
@@ -34,27 +34,34 @@ depends_lib-append  port:zlib \
 configure.args-append \
                     -DCastXML_INSTALL_DOC_DIR=share/doc/castxml
 
-variant clang36 conflicts clang37 clang38 description {Use clang 3.6 toolchain.} {
+variant clang36 conflicts clang37 clang38 clang39 description {Use clang 3.6 toolchain.} {
     depends_build-append \
                         port:clang-3.6
     configure.args-append \
                         -DLLVM_DIR=${prefix}/libexec/llvm-3.6/share/llvm/cmake
 }
 
-variant clang37 conflicts clang36 clang38 description {Use clang 3.7 toolchain.} {
+variant clang37 conflicts clang36 clang38 clang39 description {Use clang 3.7 toolchain.} {
     depends_build-append \
                         port:clang-3.7
     configure.args-append \
                         -DLLVM_DIR=${prefix}/libexec/llvm-3.7/share/llvm/cmake
 }
 
-variant clang38 conflicts clang36 clang37 description {Use clang 3.8 toolchain.} {
+variant clang38 conflicts clang36 clang37 clang39 description {Use clang 3.8 toolchain.} {
     depends_build-append \
                         port:clang-3.8
     configure.args-append \
                         -DLLVM_DIR=${prefix}/libexec/llvm-3.8/share/llvm/cmake
 }
 
-if {![variant_isset clang36] && ![variant_isset clang37] && ![variant_isset clang38]} {
-    default_variants +clang36
+variant clang39 conflicts clang36 clang37 clang38 description {Use clang 3.9 toolchain.} {
+    depends_build-append \
+                        port:clang-3.9
+    configure.args-append \
+                        -DLLVM_DIR=${prefix}/libexec/llvm-3.9/lib/cmake/llvm
+}
+
+if {![variant_isset clang36] && ![variant_isset clang37] && ![variant_isset clang38] && ![variant_isset clang39]} {
+    default_variants +clang39
 }
