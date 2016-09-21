@@ -5,9 +5,9 @@ PortSystem          1.0
 PortGroup           cxx11 1.0
 PortGroup           github 1.0
 
-github.setup        dmlc xgboost d754ce7dc19e0d7c7465999d464e13f9bf21b40d
+github.setup        dmlc xgboost 3ee145b8dc30ddc570e28f13bb40190e0e10b99e
 
-version             20160822
+version             20160920
 revision            0
 categories          math science
 platforms           darwin
@@ -53,7 +53,7 @@ if {![variant_isset openmp]} {
     build.args-append   ADD_CFLAGS="${configure.cflags} ${configure.cc_archflags} ${configure.cxxflags} ${configure.cxx_archflags}" \
                         ADD_LDFLAGS="${configure.ldflags} ${configure.ld_archflags}"
 } else {
-    configure.compiler  macports-clang-3.8
+    configure.compiler  macports-clang-3.9
     build.args-append   ADD_CFLAGS="-I${prefix}/include/libomp ${configure.cflags} ${configure.cc_archflags} ${configure.cxxflags} ${configure.cxx_archflags}" \
                         ADD_LDFLAGS="-L${prefix}/lib/libomp ${configure.ldflags} ${configure.ld_archflags}"
 }
