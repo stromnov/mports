@@ -1,0 +1,39 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-smac
+version             0.1.2
+revision            0
+categories-append   devel
+platforms           darwin
+license             BSD
+supported_archs     noarch
+
+python.versions     27 35
+
+maintainers         stromnov openmaintainer
+
+description         SMAC3, a Python implementation of 'Sequential Model-based Algorithm Configuration'.
+long_description    ${description}
+
+homepage            https://pypi.python.org/pypi/smac/
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  14e60e34efb6bacac4ce4bf518bab0f0d4788ab2 \
+                    sha256  ce36210cafb7af41c761140b0abc6357e62005a2507be6b0ce4f338bdc9bc504
+
+if {${name} ne ${subport}} {
+    depends_lib-append  port:py${python.version}-setuptools \
+                        port:py${python.version}-numpy \
+                        port:py${python.version}-scipy \
+                        port:py${python.version}-pyrfr \
+                        port:py${python.version}-configspace \
+                        port:py${python.version}-pynisher
+
+    livecheck.type      none
+}
