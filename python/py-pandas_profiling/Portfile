@@ -3,7 +3,6 @@
 
 PortSystem          1.0
 PortGroup           python 1.0
-PortGroup           select 1.0
 
 name                py-pandas_profiling
 version             1.3.0
