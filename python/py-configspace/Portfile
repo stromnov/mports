@@ -1,0 +1,38 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-configspace
+version             0.2.1
+revision            0
+categories-append   devel textproc
+platforms           darwin
+license             BSD
+supported_archs     noarch
+
+python.versions     27 35
+
+maintainers         stromnov openmaintainer
+
+description         Creation and manipulation of parameter configuration spaces.
+long_description    ${description}
+
+homepage            https://github.com/automl/ConfigSpace
+master_sites        pypi:C/ConfigSpace
+
+distname            ConfigSpace-${version}
+
+checksums           rmd160  555efc12c39937b8aa621c81a387f390bea25233 \
+                    sha256  b4389e8d37b957a8057ef0414c6c2daa4665f2038133dc8cd6ceb2c4359a7d23
+
+if {${name} ne ${subport}} {
+    depends_build-append \
+                        port:py${python.version}-setuptools
+    depends_lib-append  port:py${python.version}-numpy \
+                        port:py${python.version}-parsing \
+                        port:py${python.version}-six
+
+    livecheck.type      none
+}
