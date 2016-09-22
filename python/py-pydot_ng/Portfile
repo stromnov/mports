@@ -1,0 +1,37 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           python 1.0
+PortGroup           select 1.0
+
+name                py-pydot_ng
+version             1.0.0
+revision            0
+categories-append   devel graphics
+platforms           darwin
+license             MIT
+supported_archs     noarch
+
+python.versions     27 35
+
+maintainers         stromnov openmaintainer
+
+description         Python interface to Graphviz's Dot
+long_description    ${description}
+
+homepage            https://github.com/pydot/pydot-ng
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  1e267a1cf2e5b2558ff77a6fb980e22647074af1 \
+                    sha256  c420ecd08ec34c76bec98fbc1956d58a8f0bbd7b4e1d2dc90664d9fd29471341
+
+if {${name} ne ${subport}} {
+    depends_build-append \
+                        port:py${python.version}-setuptools
+    depends_lib-append  port:py${python.version}-parsing
+
+    livecheck.type      none
+}
