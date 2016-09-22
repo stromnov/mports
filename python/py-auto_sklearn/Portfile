@@ -1,0 +1,49 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-auto_sklearn
+version             0.0.2
+revision            0
+categories-append   science
+platforms           darwin
+license             BSD
+
+python.versions     27 35
+
+maintainers         stromnov openmaintainer
+
+description         Automated machine learning
+long_description    ${description}
+
+homepage            https://automl.github.io/auto-sklearn
+master_sites        pypi:a/auto-sklearn
+
+distname            auto-sklearn-${version}
+
+checksums           rmd160  422b8d206993d8af5dfbb48cab6b38a4ff8dfeee \
+                    sha256  3d753dc41218a649df111c4ba0d82aa54fd6b144dd1782b971479338c35042fd
+
+if {${name} ne ${subport}} {
+    depends_build-append \
+                        port:py${python.version}-setuptools
+    depends_lib-append  port:py${python.version}-numpy \
+                        port:py${python.version}-scipy \
+                        port:py${python.version}-scikit-learn \
+                        port:py${python.version}-lockfile \
+                        port:py${python.version}-psutil \
+                        port:py${python.version}-yaml \
+                        port:py${python.version}-six \
+                        port:py${python.version}-configargparse \
+                        port:py${python.version}-liac_arff \
+                        port:py${python.version}-pandas \
+                        port:py${python.version}-cython \
+                        port:py${python.version}-ConfigSpace \
+                        port:py${python.version}-pynisher \
+                        port:py${python.version}-smac \
+                        port:py${python.version}-pyrfr
+
+    livecheck.type      none
+}
