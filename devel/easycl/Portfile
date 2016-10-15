@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           github 1.0
 PortGroup           cmake 1.0
 
-github.setup        hughperkins EasyCL 3.0.0 v
+github.setup        hughperkins EasyCL 3.1.0 v
 
 name                easycl
 categories          devel
@@ -17,8 +17,8 @@ maintainers         stromnov openmaintainer
 description         Easy to run kernels using OpenCL
 long_description    ${description}
 
-checksums           rmd160  2a3dd19bc4f7e8ad69176a41a454bbb37f77ddda \
-                    sha256  b2f077a0b436235c17bf670023eb1b3b5f8aaffe6b8e3dd53661c2ad03cf13c0
+checksums           rmd160  d293d8d389c998aae11804e6d32e41cad6f11469 \
+                    sha256  19c0d7cab40c9cfacfea9d6ab620e5fe7b43565325f1ee797d82df076af4fb84
 
 patchfiles-append   patch-CMakeLists.txt.diff
 

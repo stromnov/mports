@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2015-11-30 01:26:19.000000000 +0300
-+++ CMakeLists.txt	2015-12-27 22:39:54.000000000 +0300
-@@ -50,7 +50,6 @@
+--- CMakeLists.txt.orig	2016-10-02 03:01:24.000000000 +0300
++++ CMakeLists.txt	2016-10-15 15:43:41.000000000 +0300
+@@ -55,7 +55,6 @@
  endif()
  
  include_directories(${CMAKE_CURRENT_SOURCE_DIR})
@@ -8,12 +8,12 @@
  # include_directories("${CMAKE_INSTALL_PREFIX}/include")
  
  include_directories(thirdparty/lua-5.1.5/src)
-@@ -60,8 +59,7 @@
+@@ -65,8 +64,7 @@
  SET(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
  
  if(USE_CLEW)
 -    INCLUDE("${CMAKE_MODULE_PATH}/build_clew.cmake")
--    INCLUDE_DIRECTORIES(${CLEW_INCLUDE_DIRS})
+-    INCLUDE_DIRECTORIES(${clew_INCLUDE_DIRS})
 +    find_library(CLEW_LIBRARIES NAMES clew libclew.a)
  endif()
  
