@@ -1,0 +1,23 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+PortGroup           cmake 1.0
+
+github.setup        CNugteren CLBlast 0.9.0
+
+name                clblast
+categories          math
+platforms           darwin
+license             Apache
+
+maintainers         stromnov openmaintainer
+
+description         Tuned OpenCL BLAS
+long_description    ${description}
+
+checksums           rmd160  47e69db92725eb7e963432b0bc16a86db8b990af \
+                    sha256  7bb1bf95d116f9ebc2998b3ecd51028c0ba2fe680053617a87cc16a70f535737
+
+cmake.out_of_source yes
