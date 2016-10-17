@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-auto_sklearn
-version             0.0.2
+version             0.1.0
 revision            0
 categories-append   science
 platforms           darwin
@@ -23,16 +23,19 @@ master_sites        pypi:a/auto-sklearn
 
 distname            auto-sklearn-${version}
 
-checksums           rmd160  422b8d206993d8af5dfbb48cab6b38a4ff8dfeee \
-                    sha256  3d753dc41218a649df111c4ba0d82aa54fd6b144dd1782b971479338c35042fd
+checksums           rmd160  a05512586ee8fd33d155dd21c0429a72680344be \
+                    sha256  24242b1660bef5131e6b2c6fb4516b05f93947b6f202088b45dfc20a38b3d358
 
 if {${name} ne ${subport}} {
+    patchfiles-append   patch-setup.py.diff
+
     depends_build-append \
                         port:py${python.version}-setuptools
     depends_lib-append  port:py${python.version}-numpy \
                         port:py${python.version}-scipy \
                         port:py${python.version}-scikit-learn \
                         port:py${python.version}-lockfile \
+                        port:py${python.version}-joblib \
                         port:py${python.version}-psutil \
                         port:py${python.version}-yaml \
                         port:py${python.version}-six \
@@ -43,7 +46,8 @@ if {${name} ne ${subport}} {
                         port:py${python.version}-ConfigSpace \
                         port:py${python.version}-pynisher \
                         port:py${python.version}-smac \
-                        port:py${python.version}-pyrfr
+                        port:py${python.version}-pyrfr \
+                        port:py${python.version}-xgboost
 
     livecheck.type      none
 }
