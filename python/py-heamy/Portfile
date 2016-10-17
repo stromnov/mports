@@ -1,0 +1,40 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-heamy
+version             0.0.6
+revision            0
+categories-append   science
+platforms           darwin
+license             MIT
+supported_archs     noarch
+
+python.versions     27 35
+
+maintainers         stromnov openmaintainer
+
+description         A set of useful tools for competitive data science.
+long_description    ${description}
+
+homepage            https://github.com/rushter/heamy
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  36f2fb813f8b82f38073b366594449c26ff7dcb2 \
+                    sha256  f1db9b9f162564e24e1fdcd9470c94c7e340dc21705309f0da96666d89140365
+
+if {${name} ne ${subport}} {
+    depends_lib-append  port:py${python.version}-numpy \
+                        port:py${python.version}-scipy \
+                        port:py${python.version}-scikit-learn \
+                        port:py${python.version}-pandas \
+                        port:py${python.version}-six
+
+    livecheck.type      none
+} else {
+    livecheck.type      pypi
+}
