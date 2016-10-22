@@ -1,0 +1,51 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id: Portfile 145485 2016-02-07 06:14:47Z khindenburg@macports.org $
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+github.setup        JohnLangford vowpal_wabbit 8.2.1
+categories          math
+maintainers         hum openmaintainer
+
+description         a fast online learning tool
+long_description    Vowpal Wabbit is the essence of speed in machine learning, able to \
+                    learn from terafeature datasets with ease. Via parallel learning, \
+                    it can exceed the throughput of any single machine network interface \
+                    when doing linear learning, a first amongst learning algorithms.
+
+homepage            http://hunch.net/~vw/
+platforms           darwin
+license             BSD
+
+checksums           rmd160  ec96a5a1de1445225d94bd0eb66bb72ddb7dbdf2 \
+                    sha256  017b723fcd9a8e3f8ddffe89a417174ab993d48144f71f6e7d0c624d029b51f6
+
+depends_build       port:libtool  \
+                    port:autoconf \
+                    port:automake
+depends_lib         port:boost
+
+patchfiles-append   patch-autogen.sh.diff
+
+use_autoreconf      yes
+autoreconf.cmd      ./autogen.sh
+autoreconf.args
+
+configure.args-append \
+                    --with-boost-libdir=${prefix}/lib \
+                    --with-boost-program-options=boost_program_options-mt
+
+test.run            yes
+
+post-destroot {
+    # install an additional document.
+    set doc_dir ${destroot}${prefix}/share/doc/${name}
+    xinstall -d ${doc_dir}
+    xinstall -m 644 -W ${worksrcpath} \
+        AUTHORS \
+        COPYING \
+        LICENSE \
+        README.md \
+        ${doc_dir}
+}
