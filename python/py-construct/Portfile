@@ -5,7 +5,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-construct
-version             2.8.7
+version             2.8.8
 revision            0
 categories-append   devel
 platforms           darwin
@@ -29,8 +29,8 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  0c1ae767827ffccf987a66130417ebfcd03ae7e7 \
-                    sha256  d41727620fd75715d3da286acfada5fd423af28d24acd402915151a1476acef6
+checksums           rmd160  006d205dd2d277c6e42a1285187006d72b04c8e1 \
+                    sha256  1b84b8147f6fd15bcf64b737c3e8ac5100811ad80c830cb4b2545140511c4157
 
 if {${name} ne ${subport}} {
     depends_build-append \
