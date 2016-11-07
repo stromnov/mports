@@ -1,12 +1,11 @@
 # -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
-# $Id$
 
 PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-tqdm
-version             4.8.4
-revision            1
+version             4.9.0
+revision            0
 categories-append   devel
 platforms           darwin
 license             MIT
@@ -24,8 +23,8 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  147c5bac063eabc38a227d79812aaf69ab342eff \
-                    sha256  bab05f8bb6efd2702ab6c532e5e6a758a66c0d2f443e09784b73e4066e6b3a37
+checksums           rmd160  ad4d7b115a2d5e6296a0afd4e1ffbfc3faba8903 \
+                    sha256  acdfb7d746a76f742d38f4b473056b9e6fa92ddea12d7e0dafd1f537645e0c84
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools
