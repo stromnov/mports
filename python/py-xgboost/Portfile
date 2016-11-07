@@ -5,10 +5,10 @@ PortSystem          1.0
 PortGroup           github 1.0
 PortGroup           python 1.0
 
-github.setup        dmlc xgboost ac41845d4bff1d57533334029463171131debfc0
+github.setup        dmlc xgboost 91b75f9b41ac2c8f4d591997518937ceeddf0817
 
 name                py-xgboost
-version             20161021
+version             20161106
 revision            0
 categories-append   math science
 platforms           darwin
@@ -22,8 +22,8 @@ maintainers         stromnov openmaintainer
 description         XGBoost Python Package
 long_description    ${description}
 
-checksums           rmd160  aa44538b2363600c4530956f8eceefa4c747582a \
-                    sha256  a1e392325b33efc98f1d3c4d463eeba2aa54291808da3e5f440d4b203fa85df1
+checksums           rmd160  806dff538ba102b6f221c85eb3b37d93872f2748 \
+                    sha256  f991d1b333d8a305ed8199cff002eff3ac0fc6cacefd06306e438ee2289da2a3
 
 if {${name} ne ${subport}} {
     worksrcdir          ${python.rootname}-${github.version}/python-package
