@@ -1,18 +1,17 @@
 # -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
-# $Id$
 
 PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-smac
-version             0.2.0
+version             0.2.1
 revision            0
 categories-append   devel
 platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     27 35
+python.versions     35
 
 maintainers         stromnov openmaintainer
 
@@ -24,8 +23,8 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  0774d6d282e4b7c35084892168c6e23442a1e9a5 \
-                    sha256  9513530870f83e963b8f59ddbc9ef3ab76ce73076c420ecac63391c481594e41
+checksums           rmd160  ed93e7360d95842a40b038ff634bce047e0436b1 \
+                    sha256  2549ad0296854e4933a3a860e506ac1b61fb4793e48b7f5ab1934aba5c37d87d
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
