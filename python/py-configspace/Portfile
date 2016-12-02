@@ -1,18 +1,17 @@
 # -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
-# $Id$
 
 PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-configspace
-version             0.2.1
+version             0.2.2
 revision            0
 categories-append   devel textproc
 platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     27 35
+python.versions     35
 
 maintainers         stromnov openmaintainer
 
@@ -24,8 +23,8 @@ master_sites        pypi:C/ConfigSpace
 
 distname            ConfigSpace-${version}
 
-checksums           rmd160  555efc12c39937b8aa621c81a387f390bea25233 \
-                    sha256  b4389e8d37b957a8057ef0414c6c2daa4665f2038133dc8cd6ceb2c4359a7d23
+checksums           rmd160  e4d9bd46d837eff972e9531f9d006e7cb74b999e \
+                    sha256  507ccf0011d1ffce01dda7da206736e46190bf464eec66a0033bee19a37e3eae
 
 if {${name} ne ${subport}} {
     depends_build-append \
