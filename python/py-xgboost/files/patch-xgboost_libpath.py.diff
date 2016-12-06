@@ -1,5 +1,5 @@
---- xgboost/libpath.py.orig	2016-09-20 16:13:47.000000000 +0300
-+++ xgboost/libpath.py	2016-09-21 14:48:50.000000000 +0300
+--- xgboost/libpath.py.orig	2016-12-03 17:08:11.000000000 +0300
++++ xgboost/libpath.py	2016-12-03 17:08:00.000000000 +0300
 @@ -21,9 +21,7 @@
      """
      curr_path = os.path.dirname(os.path.abspath(os.path.expanduser(__file__)))
