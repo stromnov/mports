@@ -1,11 +1,10 @@
 # -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
-# $Id$
 
 PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-lime
-version             0.1.1.16
+version             0.1.1.18
 revision            0
 categories-append   science
 platforms           darwin
@@ -24,8 +23,8 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  8e215c00263a374b0f91015a86bd39cf2324a4f1 \
-                    sha256  07b4d42e83a23b5681a5150329caba919482f1ba611e260994ffc41e59bf4587
+checksums           rmd160  3b40f77728a4e1a21a7d2c6843285e49897b6a39 \
+                    sha256  d341ed9cceedb853914d583ebbf1d6be6305a9bc6e9f0860e3233b553878d4f1
 
 if {${name} ne ${subport}} {
     depends_build-append \
@@ -35,6 +34,4 @@ if {${name} ne ${subport}} {
                         port:py${python.version}-scikit-learn
 
     livecheck.type      none
-} else {
-    livecheck.type      pypi
 }
