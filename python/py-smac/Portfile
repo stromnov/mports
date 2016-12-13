@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-smac
-version             0.2.1
+version             0.2.2
 revision            0
 categories-append   devel
 platforms           darwin
@@ -23,8 +23,8 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  ed93e7360d95842a40b038ff634bce047e0436b1 \
-                    sha256  2549ad0296854e4933a3a860e506ac1b61fb4793e48b7f5ab1934aba5c37d87d
+checksums           rmd160  2847933e2480e1e7be2b042f11d2e651212b00cb \
+                    sha256  352334596092d5ecf42063556caf0c9fa1fd38a97c92563f2d0afc45ef63bf1a
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
