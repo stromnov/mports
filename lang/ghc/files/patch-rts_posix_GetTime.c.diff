@@ -1,0 +1,19 @@
+--- rts/posix/GetTime.c.orig	2016-12-05 16:01:33.000000000 +0300
++++ rts/posix/GetTime.c	2016-12-05 16:03:34.000000000 +0300
+@@ -33,14 +33,14 @@
+ // we'll implement getProcessCPUTime() and getProcessElapsedTime()
+ // separately, using getrusage() and gettimeofday() respectively
+ 
+-#ifdef darwin_HOST_OS
++#if !defined(HAVE_CLOCK_GETTIME) && defined(darwin_HOST_OS)
+ static uint64_t timer_scaling_factor_numer = 0;
+ static uint64_t timer_scaling_factor_denom = 0;
+ #endif
+ 
+ void initializeTimer()
+ {
+-#ifdef darwin_HOST_OS
++#if !defined(HAVE_CLOCK_GETTIME) && defined(darwin_HOST_OS)
+     mach_timebase_info_data_t info;
+     (void) mach_timebase_info(&info);
+     timer_scaling_factor_numer = (uint64_t)info.numer;
