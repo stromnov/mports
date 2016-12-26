@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-kombu
-version             4.0.1
+version             4.0.2
 revision            0
 categories-append   devel
 platforms           darwin
@@ -23,8 +23,8 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  855c897ad9acf365cdb34a2da6da31dbb8350ae4 \
-                    sha256  d293c2698f6b86835f2584c63cc6283fcac1ac6bdb3e7b8ff31395da20626536
+checksums           rmd160  bb2f87f2127074badb153fb8a04c32aaa0bfdabc \
+                    sha256  d0fc6f2a36610a308f838db4b832dad79a681b516ac1d1a1f9d42edb58cc11a2
 
 if {${name} ne ${subport}} {
     depends_build-append \
