@@ -4,14 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-lime
-version             0.1.1.18
+version             0.1.1.20
 revision            0
 categories-append   science
 platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     27 35
+python.versions     27 35 36
 
 maintainers         stromnov openmaintainer
 
@@ -23,8 +23,8 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  3b40f77728a4e1a21a7d2c6843285e49897b6a39 \
-                    sha256  d341ed9cceedb853914d583ebbf1d6be6305a9bc6e9f0860e3233b553878d4f1
+checksums           rmd160  da573b40af39d6d48bcc011ae707eb35c4434831 \
+                    sha256  3bf5b2305d60b803724c4b46407c536965155be966539b352ec03f2dd721c873
 
 if {${name} ne ${subport}} {
     depends_build-append \
