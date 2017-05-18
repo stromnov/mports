@@ -1,0 +1,13 @@
+--- bindings/python/Makefile.am.orig	2017-05-18 18:14:48.000000000 +0300
++++ bindings/python/Makefile.am	2017-05-18 18:15:55.000000000 +0300
+@@ -14,8 +14,8 @@
+ # directory "link-grammar".  Turns out python cannot tolerate dashes.
+ # Thus, typically, it will install into
+ # /usr/local/lib/python2.7/dist-packages/linkgrammar (without the dash)
+-pkgpythondir=$(python2dir)/linkgrammar
+-pkgpyexecdir=$(python2dir)/linkgrammar
++pkgpythondir=@@PYTHON2DIR@@/linkgrammar
++pkgpyexecdir=@@PYTHON2DIR@@/linkgrammar
+ 
+ # Files that get installed in $pkgpythondir
+ pkgpython_PYTHON =                                 \
