@@ -5,14 +5,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-construct
-version             2.8.8
+version             2.8.12
 revision            0
 categories-append   devel
 platforms           darwin
 license             MIT
 supported_archs     noarch
 
-python.versions     27 34 35
+python.versions     27 34 35 36
 
 maintainers         dckd.nl:macports stromnov openmaintainer
 
@@ -29,8 +29,8 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  006d205dd2d277c6e42a1285187006d72b04c8e1 \
-                    sha256  1b84b8147f6fd15bcf64b737c3e8ac5100811ad80c830cb4b2545140511c4157
+checksums           rmd160  f0c6b1570d9acc224a05b83f44ff48695cba8070 \
+                    sha256  67ee2c69a11bdadc0705c7e0de0ff16ef74b730932537e22ac1f64f479240ffa
 
 if {${name} ne ${subport}} {
     depends_build-append \
