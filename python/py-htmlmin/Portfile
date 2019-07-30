@@ -1,0 +1,34 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-htmlmin
+version             0.1.12
+revision            0
+categories-append   textproc
+platforms           darwin
+license             BSD
+supported_archs     noarch
+
+python.versions     36 37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         A configurable HTML Minifier with safety features.
+long_description    ${description}
+
+homepage            https://htmlmin.readthedocs.io/
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  0e6773f367154cf516ed76bcdc336592a6efeb7b \
+                    sha256  50c1ef4630374a5d723900096a961cff426dff46b48f34d194a81bbe14eca178 \
+                    size    19940
+
+if {${name} ne ${subport}} {
+    depends_lib-append   port:py${python.version}-setuptools
+
+    livecheck.type      none
+}
