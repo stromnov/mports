@@ -1,0 +1,13 @@
+--- hpbandster/optimizers/iterations/successiveresampling.py.orig	2019-07-30 18:08:32.000000000 +0300
++++ hpbandster/optimizers/iterations/successiveresampling.py	2019-07-30 18:08:41.000000000 +0300
+@@ -21,8 +21,8 @@
+ 					stage regardless of the fraction.
+ 		
+ 		"""
+-			self.resampling_rate = resampling_rate
+-			self.min_samples_advance = min_samples_advance
++		self.resampling_rate = resampling_rate
++		self.min_samples_advance = min_samples_advance
+ 
+ 
+ 	def _advance_to_next_stage(self, config_ids, losses):

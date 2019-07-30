@@ -1,0 +1,44 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-hpbandster
+version             0.7.4
+revision            0
+categories-append   math science
+platforms           darwin
+license             BSD
+supported_archs     noarch
+
+python.versions     37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         HyPerBAND on STERoids, a distributed Hyperband implementation.
+long_description    ${description}
+
+homepage            https://github.com/automl/HpBandSter
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  b1701b4a2817010cc17b157e92bde09768fbd9cc \
+                    sha256  49ffc32688155b509e62f3617b52ae15a96c9bff2c996a23df83f279106c5921 \
+                    size    51310
+
+if {${name} ne ${subport}} {
+    depends_build-append \
+                        port:py${python.version}-setuptools
+    depends_lib-append  port:py${python.version}-pyro \
+                        port:py${python.version}-serpent \
+                        port:py${python.version}-configspace \
+                        port:py${python.version}-numpy \
+                        port:py${python.version}-statsmodels \
+                        port:py${python.version}-scipy \
+                        port:py${python.version}-netifaces
+
+    patchfiles-append   patch-successiveresampling.py.diff
+
+    livecheck.type      none
+}
