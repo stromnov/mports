@@ -1,0 +1,24 @@
+--- setup.py.orig	2019-06-25 15:48:01.000000000 +0300
++++ setup.py	2019-06-25 15:49:33.000000000 +0300
+@@ -184,7 +184,7 @@
+ 
+ ###########################################################################
+ 
+-LIBIGRAPH_FALLBACK_INCLUDE_DIRS = ['/usr/include/igraph', '/usr/local/include/igraph']
++LIBIGRAPH_FALLBACK_INCLUDE_DIRS = ['@PREFIX@/include/igraph']
+ LIBIGRAPH_FALLBACK_LIBRARIES = ['igraph']
+ LIBIGRAPH_FALLBACK_LIBRARY_DIRS = []
+ 
+@@ -871,12 +871,6 @@
+     }
+ )
+ 
+-if "macosx" in get_platform() and "bdist_mpkg" in sys.argv:
+-    # OS X specific stuff to build the .mpkg installer
+-    options["data_files"] = [ \
+-            ('/usr/local/lib', [os.path.join('..', 'igraph', 'fatbuild', 'libigraph.0.dylib')])
+-    ]
+-
+ if sys.version_info > (3, 0):
+     if build_py is None:
+         options["use_2to3"] = True

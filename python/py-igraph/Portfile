@@ -1,0 +1,43 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-igraph
+version             0.7.1.post6
+categories-append   math
+platforms           darwin
+license             GPL-2+
+
+python.versions     27 34 35 36 37
+
+maintainers         {snc @nerdling} openmaintainer
+
+description         Python interface to the igraph library
+
+long_description    Python interface to the igraph high performance \
+                    graph library
+
+homepage            https://pypi.python.org/pypi/python-igraph/
+master_sites        pypi:p/python-igraph/
+
+distname            python-igraph-${version}
+
+checksums           rmd160  67f939e1c32582b9237720ffdd630f2266824993 \
+                    sha256  a5ea42790a077eadb3d1e8f82edc47516fea4a2b26bbf52bfc148370fe0fe676 \
+                    size    377298
+
+if {${name} ne ${subport}} {
+    depends_build       port:pkgconfig port:py${python.version}-setuptools
+    depends_lib-append  port:igraph
+
+    patchfiles          patch-setup.py.diff
+
+    post-patch {
+        reinplace s|@PREFIX@|${prefix}|g ${worksrcpath}/setup.py
+    }
+
+    livecheck.type      none
+} else {
+    livecheck.name      python-igraph
+}
