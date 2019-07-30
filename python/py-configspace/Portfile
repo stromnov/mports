@@ -4,14 +4,13 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-configspace
-version             0.2.2
+version             0.4.10
 revision            0
 categories-append   devel textproc
 platforms           darwin
 license             BSD
-supported_archs     noarch
 
-python.versions     35
+python.versions     37
 
 maintainers         stromnov openmaintainer
 
@@ -23,15 +22,16 @@ master_sites        pypi:C/ConfigSpace
 
 distname            ConfigSpace-${version}
 
-checksums           rmd160  e4d9bd46d837eff972e9531f9d006e7cb74b999e \
-                    sha256  507ccf0011d1ffce01dda7da206736e46190bf464eec66a0033bee19a37e3eae
+checksums           rmd160  537351f095615cde08061ff2a3db3df2a7b6d845 \
+                    sha256  108204939101feabf7ca7a4c794824a82ba1d125fe0e4f8eba484a82ee5a7d96 \
+                    size    882191
 
 if {${name} ne ${subport}} {
     depends_build-append \
-                        port:py${python.version}-setuptools
+                        port:py${python.version}-setuptools \
+                        port:py${python.version}-cython
     depends_lib-append  port:py${python.version}-numpy \
-                        port:py${python.version}-parsing \
-                        port:py${python.version}-six
+                        port:py${python.version}-parsing
 
     livecheck.type      none
 }
