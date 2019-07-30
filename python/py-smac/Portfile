@@ -4,14 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-smac
-version             0.2.2
+version             0.10.0
 revision            0
 categories-append   devel
 platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     35
+python.versions     37
 
 maintainers         stromnov openmaintainer
 
@@ -23,16 +23,30 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  2847933e2480e1e7be2b042f11d2e651212b00cb \
-                    sha256  352334596092d5ecf42063556caf0c9fa1fd38a97c92563f2d0afc45ef63bf1a
+checksums           rmd160  85f93b01545604bade08d15cd024794011d5a9f3 \
+                    sha256  91f7db82a8eb4fb8101c5f3de3b0f51c228e0f94af3c10efe5d6a10afbdec400 \
+                    size    139514
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
+                        port:py${python.version}-cython \
                         port:py${python.version}-numpy \
                         port:py${python.version}-scipy \
-                        port:py${python.version}-pyrfr \
+                        port:py${python.version}-six \
+                        port:py${python.version}-psutil \
+                        port:py${python.version}-pynisher \
                         port:py${python.version}-configspace \
-                        port:py${python.version}-pynisher
+                        port:py${python.version}-scikit-learn \
+                        port:py${python.version}-pyrfr \
+                        port:py${python.version}-sphinx \
+                        port:py${python.version}-sphinx_rtd_theme \
+                        port:py${python.version}-joblib \
+                        port:py${python.version}-nose \
+                        port:py${python.version}-pyDOE \
+                        port:py${python.version}-sobol_seq \
+                        port:py${python.version}-statsmodels \
+                        port:py${python.version}-emcee \
+                        port:py${python.version}-george
 
     livecheck.type      none
 }
