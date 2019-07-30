@@ -9,7 +9,6 @@ revision            0
 categories-append   devel net
 platforms           darwin
 license             MIT
-supported_archs     noarch
 
 python.versions     37
 
