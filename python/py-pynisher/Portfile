@@ -5,14 +5,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-pynisher
-version             0.4.2
+version             0.5.0
 revision            0
 categories-append   devel
 platforms           darwin
 license             MIT
 supported_archs     noarch
 
-python.versions     27 35
+python.versions     37
 
 maintainers         stromnov openmaintainer
 
@@ -24,8 +24,9 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  5531831c5373a46897d2f2fc74ab85de5fcdd3cc \
-                    sha256  b4cfd460143c6651db61ef494515a9c2fc83820fdc290b7da19b6486ff1f0a6b
+checksums           rmd160  bb8a673c5a01e0678f0205e598dc9210b461d76a \
+                    sha256  1b1079315ad1009de108c9ad701f6ae5274264e64503fc22c2de366d99953f34 \
+                    size    4980
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
