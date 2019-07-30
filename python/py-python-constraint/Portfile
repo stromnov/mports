@@ -1,0 +1,37 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-python-constraint
+version             1.4.0
+revision            0
+categories-append   math
+platforms           darwin
+license             BSD
+supported_archs     noarch
+
+python.versions     37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         Library for handling CSPs (Constraint Solving Problems) over finite domain.
+long_description    ${description}
+
+homepage            https://github.com/python-constraint/python-constraint
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+use_bzip2           yes
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  15e6c9f7eaf81d2ab4814284ec0cadaeb1941cb6 \
+                    sha256  501d6f17afe0032dfc6ea6c0f8acc12e44f992733f00e8538961031ef27ccb8e \
+                    size    18416
+
+if {${name} ne ${subport}} {
+    depends_build-append \
+                        port:py${python.version}-setuptools
+
+    livecheck.type      none
+}
