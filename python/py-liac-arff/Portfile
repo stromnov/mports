@@ -5,14 +5,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-liac-arff
-version             2.1.0
+version             2.4.0
 revision            0
 categories-append   science
 platforms           darwin
 license             MIT
 supported_archs     noarch
 
-python.versions     27 35
+python.versions     37
 
 maintainers         stromnov openmaintainer
 
@@ -20,14 +20,13 @@ description         A module for read and write ARFF files in Python.
 long_description    ${description}
 
 homepage            https://github.com/renatopp/liac-arff
-master_sites        pypi:l/liac-arff
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-use_zip             yes
+distname            ${python.rootname}-${version}
 
-distname            liac-arff-${version}
-
-checksums           rmd160  6594f5898a354034ec9eb5c357478afb38f639c6 \
-                    sha256  be6b5b76698d5fca1f24d75c98ed9c0ff5e24eb0d985d01cfd26c08a70f9654e
+checksums           rmd160  708c6a5a5b190ca4a2bc1ae844b990ca05691495 \
+                    sha256  47afcd1fd248b2892f66075987422d0576fc2c2fd0811d0cbd32f2135b065df5 \
+                    size    15276
 
 if {${name} ne ${subport}} {
     depends_build-append \
