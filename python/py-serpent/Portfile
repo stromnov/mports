@@ -1,18 +1,20 @@
 # -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
 PortSystem          1.0
 PortGroup           python 1.0
-PortGroup           github 1.0
-
-github.setup        irmen Serpent 1.11.2 v
 
 name                py-serpent
-
-categories-append   print
-
+version             1.28
+revision            0
+categories-append   devel
 platforms           darwin
-supported_archs     noarch
 license             MIT
+supported_archs     noarch
+
+python.versions     27 34 35 36 37
+
 maintainers         {fusion.gat.com:smithsp @smithsp} openmaintainer
+
 description         Serialization based on ast.literal_eval
 long_description    \
     Serpent is a simple serialization library based on ast.literal_eval.  \
@@ -20,12 +22,18 @@ long_description    \
     ast.literal_eval(), the serialized data is safe to transport to other \
     machines (over the network for instance) and de-serialize it there.
 
-checksums           rmd160  3e05a73e07f07a3cace5b27a5b418725d49cf45f \
-                    sha256  d3d3cdb601a81b5693e8462948795a93234f64fbc8d060044eb2c9d199930e5e
+homepage            https://pypi.org/project/serpent/
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-python.versions     27 34 35 36
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  5b9afdae6095a458697fe454a78ae280c9050c2c \
+                    sha256  f306336ca09aa38e526f3b03cab58eb7e45af09981267233167bcf3bfd6436ab \
+                    size    26912
 
 if {${name} ne ${subport}} {
-    depends_build-append port:py${python.version}-setuptools
-    livecheck.type       none
+    depends_build-append \
+                        port:py${python.version}-setuptools
+
+    livecheck.type      none
 }
