@@ -1,0 +1,39 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-scikit-MDR
+version             0.4.4
+revision            0
+categories-append   math
+platforms           darwin
+license             MIT
+supported_archs     noarch
+
+python.versions     27 35 36 37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         An implementation of Multifactor Dimensionality Reduction (MDR) for feature construction.
+long_description    ${description}
+
+homepage            https://github.com/EpistasisLab/scikit-mdr
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  33ee4b7d3689a608010e1449363eb60ddd07b7ff \
+                    sha256  fc4e6710c7ac7a63c55641773388e43cc75bbe19f8d946bb8ac09eadb7d9eb2e \
+                    size    11333
+
+if {${name} ne ${subport}} {
+    depends_build-append \
+                        port:py${python.version}-setuptools
+    depends_lib-append  port:py${python.version}-numpy \
+                        port:py${python.version}-scipy \
+                        port:py${python.version}-scikit-learn \
+                        port:py${python.version}-matplotlib
+
+    livecheck.type      none
+}
