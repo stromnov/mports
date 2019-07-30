@@ -1,0 +1,36 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-colorcet
+version             2.0.1
+revision            0
+categories-append   math science
+platforms           darwin
+license             CC-BY
+supported_archs     noarch
+
+python.versions     36 37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         Collection of perceptually accurate colormaps.
+long_description    ${description}
+
+homepage            https://colorcet.pyviz.org/
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  c91f467dab0589c987b492c3749fbddbe115e68f \
+                    sha256  ab1d16aba97f54af190631c7777c356b04b53de549672ff6b01c66d716eddff3 \
+                    size    2923181
+
+if {${name} ne ${subport}} {
+    depends_lib-append  port:py${python.version}-setuptools \
+                        port:py${python.version}-param \
+                        port:py${python.version}-pyct
+
+    livecheck.type      none
+}
