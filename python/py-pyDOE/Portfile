@@ -1,0 +1,39 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-pyDOE
+version             0.3.8
+revision            0
+categories-append   math science
+platforms           darwin
+license             BSD
+supported_archs     noarch
+
+python.versions     37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         Design of experiments for Python.
+long_description    ${description}
+
+homepage            https://github.com/tisimst/pyDOE
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+use_zip             yes
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  7869318faf9c7d9c29a4f7989d95624111f948c0 \
+                    sha256  cbd6f14ae26d3c9f736013205f53ea1191add4567033c3ee77b7dd356566c4b6 \
+                    size    22283
+
+if {${name} ne ${subport}} {
+    depends_build-append \
+                        port:py${python.version}-setuptools
+    depends_lib-append  port:py${python.version}-numpy \
+                        port:py${python.version}-scipy
+
+    livecheck.type      none
+}
