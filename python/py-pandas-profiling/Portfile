@@ -1,0 +1,42 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-pandas-profiling
+version             2.3.0
+revision            0
+categories-append   math science
+platforms           darwin
+license             MIT
+supported_archs     noarch
+
+python.versions     36 37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         Generates profile reports from a pandas DataFrame.
+long_description    ${description}
+
+homepage            https://github.com/pandas-profiling/pandas-profiling
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  227a5e514c5c8d7f65a9e3a0589c02e69d86bdca \
+                    sha256  e3d286dca878834f14a84e82140f5185d29217d7693a78528481049bbdc67606 \
+                    size    127435
+
+if {${name} ne ${subport}} {
+    depends_lib-append  port:py${python.version}-setuptools \
+                        port:py${python.version}-pandas \
+                        port:py${python.version}-matplotlib \
+                        port:py${python.version}-jinja2 \
+                        port:py${python.version}-missingno \
+                        port:py${python.version}-htmlmin \
+                        port:py${python.version}-phik \
+                        port:py${python.version}-confuse \
+                        port:py${python.version}-astropy
+
+    livecheck.type      none
+}
