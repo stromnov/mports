@@ -1,0 +1,41 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim: fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-pythran
+version             0.9.2
+revision            0
+categories-append   devel math
+platforms           darwin
+license             BSD
+supported_archs     noarch
+
+python.versions     27 36 37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         An ahead of time compiler for a subset of the Python language.
+long_description    ${description}
+
+homepage            https://github.com/serge-sans-paille/pythran
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  c27a3f2638328789e236a7f7ebf7a3de723ad47e \
+                    sha256  eab7c91f904f31b786a58b73dd0da31a0ddd4a207c447ca60a87b76101bffd0d \
+                    size    6913316
+
+if {${name} ne ${subport}} {
+    depends_lib-append  port:py${python.version}-setuptools \
+                        port:py${python.version}-numpy \
+                        port:py${python.version}-pytest-runner \
+                        port:py${python.version}-ply \
+                        port:py${python.version}-networkx \
+                        port:py${python.version}-decorator \
+                        port:py${python.version}-gast \
+                        port:py${python.version}-six
+
+    livecheck.type      none
+}
