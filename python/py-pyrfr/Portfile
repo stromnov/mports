@@ -5,13 +5,13 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-pyrfr
-version             0.2.0
+version             0.8.0
 revision            0
 categories-append   devel
 platforms           darwin
 license             BSD
 
-python.versions     27 35
+python.versions     37
 
 maintainers         stromnov openmaintainer
 
@@ -23,13 +23,13 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  9b55dd62574d1e83347336eb7a64557c255bfd6e \
-                    sha256  709f963af293f01f7db3e0e0d382ec33ffbac5111475afe131371d2f1ba23ec2
+checksums           rmd160  7568c7741ecd2e9d9f68dd63c826d6c2d4d1c081 \
+                    sha256  092cb7931486672ad00a71f37cc2e204cdb4b75ab0a47056667cc2683cc07dbd \
+                    size    293780
 
 if {${name} ne ${subport}} {
     depends_build-append \
-                        port:py${python.version}-cython
-    depends_lib-append  port:py${python.version}-numpy
+                        port:swig-python
 
     livecheck.type      none
 }
