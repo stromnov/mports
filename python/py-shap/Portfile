@@ -1,0 +1,42 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-shap
+version             0.29.3
+revision            0
+categories-append   math science
+platforms           darwin
+license             MIT
+
+python.versions     36 37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         SHAP is a unified approach to explain the output of any ML model.
+long_description    ${description}
+
+homepage            http://github.com/slundberg/shap
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  0dcc7a10b10b1cd67782b09e138068169de06e0c \
+                    sha256  928fff49627022e33664561a60939e7801bb188037cf2d6cbc124a3b071a085f \
+                    size    230421
+
+if {${name} ne ${subport}} {
+    depends_build-append \
+                        port:py${python.version}-setuptools
+    depends_lib-append  port:py${python.version}-numpy \
+                        port:py${python.version}-scipy \
+                        port:py${python.version}-scikit-learn \
+                        port:py${python.version}-matplotlib \
+                        port:py${python.version}-pandas \
+                        port:py${python.version}-tqdm \
+                        port:py${python.version}-ipython \
+                        port:py${python.version}-scikit-image
+
+    livecheck.type      none
+}
