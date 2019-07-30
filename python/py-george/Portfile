@@ -1,0 +1,39 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-george
+version             0.3.1
+revision            0
+categories-append   math science
+platforms           darwin
+license             MIT
+
+python.versions     37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         Blazingly fast Gaussian Processes for regression.
+long_description    ${description}
+
+homepage            https://github.com/dfm/george
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  40159641941ba227abb217898a34042e8a4a1305 \
+                    sha256  175f1a8022430adab8bf8e5e0ffc3941e5f48ca831bd9460e69716cc2820e628 \
+                    size    1770629
+
+if {${name} ne ${subport}} {
+    depends_build-append \
+                        port:py${python.version}-setuptools \
+                        port:py${python.version}-yaml \
+                        port:py${python.version}-jinja2 \
+                        port:py${python.version}-pybind11
+    depends_lib-append  port:py${python.version}-numpy \
+                        port:py${python.version}-scipy
+
+    livecheck.type      none
+}
