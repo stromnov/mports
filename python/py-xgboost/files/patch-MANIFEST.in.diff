@@ -1,7 +1,0 @@
---- MANIFEST.in.orig	2016-03-12 23:25:38.000000000 +0300
-+++ MANIFEST.in	2016-03-12 23:25:49.000000000 +0300
-@@ -9,3 +9,4 @@
- global-exclude xgboost/*.o
- global-exclude *.pyo
- global-exclude *.pyc
-+global-exclude *.sh

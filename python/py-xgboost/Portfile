@@ -1,44 +1,35 @@
 # -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
 
 PortSystem          1.0
-PortGroup           github 1.0
 PortGroup           python 1.0
 
-github.setup        dmlc xgboost 49ff7c1649eef4cec97c1569f1d8720f0050d72b
-
 name                py-xgboost
-version             20170113
+version             0.90
 revision            0
-categories-append   math science
+categories-append   math
 platforms           darwin
 license             Apache
-supported_archs     noarch
 
-python.versions     27 35 36
+python.versions     36 37
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
-description         XGBoost Python Package
+description         Scalable, Portable and Distributed Gradient Boosting (GBDT, GBRT or GBM) Library.
 long_description    ${description}
 
-checksums           rmd160  1d77e54a95c6c369f54231b9b21bc7eb3b93d60e \
-                    sha256  1923c917b92f199c7f7331dac04981e8459dab93c757cccaf76b2d855e1022be
+homepage            https://xgboost.ai/
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  24908b3ac2f1f65a73ab136ecd4a1dea4a3cb161 \
+                    sha256  d69f90d61a63e8889fd39a31ad00c629bac1ca627f8406b9b6d4594c9e29ab84 \
+                    size    676689
 
 if {${name} ne ${subport}} {
-    worksrcdir          ${python.rootname}-${github.version}/python-package
-
-    patchfiles-append   patch-xgboost_libpath.py.diff \
-                        patch-setup.py.diff \
-                        patch-MANIFEST.in.diff
-
-    post-patch {
-        reinplace "s|@prefix@|${prefix}|g" ${worksrcpath}/xgboost/libpath.py
-    }
-
     depends_build-append \
                         port:py${python.version}-setuptools
-    depends_lib-append  port:xgboost \
-                        port:py${python.version}-numpy \
+    depends_lib-append  port:py${python.version}-numpy \
                         port:py${python.version}-scipy
 
     livecheck.type      none
