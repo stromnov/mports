@@ -1,17 +1,16 @@
 # -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
-# $Id$
 
 PortSystem          1.0
 PortGroup           python 1.0
 
-name                py-auto_sklearn
-version             0.1.0
+name                py-auto-sklearn
+version             0.5.2
 revision            0
 categories-append   science
 platforms           darwin
 license             BSD
 
-python.versions     27 35
+python.versions     37
 
 maintainers         stromnov openmaintainer
 
@@ -19,35 +18,34 @@ description         Automated machine learning
 long_description    ${description}
 
 homepage            https://automl.github.io/auto-sklearn
-master_sites        pypi:a/auto-sklearn
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            auto-sklearn-${version}
+distname            ${python.rootname}-${version}
 
-checksums           rmd160  a05512586ee8fd33d155dd21c0429a72680344be \
-                    sha256  24242b1660bef5131e6b2c6fb4516b05f93947b6f202088b45dfc20a38b3d358
+checksums           rmd160  6c3fb24710cbc415966d1586f8f091d70c7521f1 \
+                    sha256  d9bd91b964664b6e8983d6ecfb757e01af5f0113c2909009ff5b11d503b49c38 \
+                    size    3408370
 
 if {${name} ne ${subport}} {
-    patchfiles-append   patch-setup.py.diff
+    #patchfiles-append   patch-setup.py.diff
 
     depends_build-append \
-                        port:py${python.version}-setuptools
+                        port:py${python.version}-setuptools \
+                        port:py${python.version}-cython
     depends_lib-append  port:py${python.version}-numpy \
                         port:py${python.version}-scipy \
                         port:py${python.version}-scikit-learn \
+                        port:py${python.version}-xgboost \
                         port:py${python.version}-lockfile \
                         port:py${python.version}-joblib \
                         port:py${python.version}-psutil \
                         port:py${python.version}-yaml \
-                        port:py${python.version}-six \
-                        port:py${python.version}-configargparse \
-                        port:py${python.version}-liac_arff \
+                        port:py${python.version}-liac-arff \
                         port:py${python.version}-pandas \
-                        port:py${python.version}-cython \
                         port:py${python.version}-ConfigSpace \
                         port:py${python.version}-pynisher \
-                        port:py${python.version}-smac \
                         port:py${python.version}-pyrfr \
-                        port:py${python.version}-xgboost
+                        port:py${python.version}-smac
 
     livecheck.type      none
 }
