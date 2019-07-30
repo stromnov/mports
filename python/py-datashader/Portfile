@@ -1,0 +1,54 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+
+PortSystem          1.0
+PortGroup           python 1.0
+
+name                py-datashader
+version             0.7.0
+revision            0
+categories-append   math scienct
+platforms           darwin
+license             BSD
+supported_archs     noarch
+
+python.versions     36 37
+
+maintainers         {stromnov @stromnov} openmaintainer
+
+description         Datashader is a data rasterization pipeline.
+long_description    ${description}
+
+homepage            http://datashader.org/
+master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
+
+distname            ${python.rootname}-${version}
+
+checksums           rmd160  c143c3261867164a25c42c8297f626243c411773 \
+                    sha256  5baf218713dc1ad4791f7bcf606ef8f618273945e788c59f9573aebd7cb851f8 \
+                    size    25159770
+
+if {${name} ne ${subport}} {
+    depends_lib-append  port:py${python.version}-setuptools \
+                        port:py${python.version}-dask \
+                            port:py${python.version}-cloudpickle \
+                            port:py${python.version}-partd \
+                            port:py${python.version}-distributed \
+                        port:py${python.version}-toolz \
+                        port:py${python.version}-datashape \
+                        port:py${python.version}-numba \
+                        port:py${python.version}-numpy \
+                        port:py${python.version}-pandas \
+                        port:py${python.version}-pillow \
+                        port:py${python.version}-xarray \
+                        port:py${python.version}-colorcet \
+                        port:py${python.version}-param \
+                        port:py${python.version}-pyct \
+                            port:py${python.version}-yaml \
+                            port:py${python.version}-requests \
+                        port:py${python.version}-scikit-image \
+                        port:py${python.version}-bokeh \
+                        port:py${python.version}-scipy \
+                        port:py${python.version}-testpath
+
+    livecheck.type      none
+}
