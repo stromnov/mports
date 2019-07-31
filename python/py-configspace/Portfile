@@ -12,7 +12,7 @@ license             BSD
 
 python.versions     37
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         Creation and manipulation of parameter configuration spaces.
 long_description    ${description}

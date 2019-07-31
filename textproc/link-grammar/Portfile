@@ -10,7 +10,7 @@ categories          textproc
 platforms           darwin
 license             LGPL
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         Link Grammar Parser
 

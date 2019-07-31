@@ -14,7 +14,7 @@ supported_archs     noarch
 
 python.versions     37
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         A module for read and write ARFF files in Python.
 long_description    ${description}

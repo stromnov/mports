@@ -12,7 +12,7 @@ license             BSD
 
 python.versions     37
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         PyRFR
 long_description    ${description}

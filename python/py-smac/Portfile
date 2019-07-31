@@ -13,7 +13,7 @@ supported_archs     noarch
 
 python.versions     37
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         SMAC3, a Python implementation of 'Sequential Model-based Algorithm Configuration'.
 long_description    ${description}

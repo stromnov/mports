@@ -14,7 +14,7 @@ supported_archs     noarch
 
 python.versions     27 35
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         Python interface to Graphviz's Dot
 long_description    ${description}

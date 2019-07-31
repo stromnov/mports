@@ -13,7 +13,7 @@ supported_archs     noarch
 
 python.versions     37
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         Local Interpretable Model-Agnostic Explanations for machine learning classifiers
 long_description    ${description}

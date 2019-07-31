@@ -12,7 +12,7 @@ categories          math science devel
 platforms           darwin
 license             MPL
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         OpenCL library to train deep convolutional neural networks
 long_description    ${description}

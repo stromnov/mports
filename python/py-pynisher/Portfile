@@ -14,7 +14,7 @@ supported_archs     noarch
 
 python.versions     37
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         Library to limit the resources used by a function.
 long_description    ${description}

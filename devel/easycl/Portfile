@@ -12,7 +12,7 @@ categories          devel
 platforms           darwin
 license             MPL
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         Easy to run kernels using OpenCL
 long_description    ${description}

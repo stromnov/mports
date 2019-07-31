@@ -12,7 +12,7 @@ license             BSD
 
 python.versions     37
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         Automated machine learning
 long_description    ${description}

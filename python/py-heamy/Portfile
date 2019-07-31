@@ -14,7 +14,7 @@ supported_archs     noarch
 
 python.versions     37
 
-maintainers         stromnov openmaintainer
+maintainers         {stromnov @stromnov} openmaintainer
 
 description         A set of useful tools for competitive data science.
 long_description    ${description}
