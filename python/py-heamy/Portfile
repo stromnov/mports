@@ -5,14 +5,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-heamy
-version             0.0.6
+version             0.0.7
 revision            0
 categories-append   science
 platforms           darwin
 license             MIT
 supported_archs     noarch
 
-python.versions     27 35
+python.versions     37
 
 maintainers         stromnov openmaintainer
 
@@ -24,8 +24,9 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  36f2fb813f8b82f38073b366594449c26ff7dcb2 \
-                    sha256  f1db9b9f162564e24e1fdcd9470c94c7e340dc21705309f0da96666d89140365
+checksums           rmd160  d26dfb7e5ee21fdc8b1437b8e31ca879e8f23e17 \
+                    sha256  bfbdf60e088ff73d8e83ec8ebda9fc2f5343037cbf2018ef7abbd5a93478b6a7 \
+                    size    30546
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-numpy \
@@ -35,6 +36,4 @@ if {${name} ne ${subport}} {
                         port:py${python.version}-six
 
     livecheck.type      none
-} else {
-    livecheck.type      pypi
 }
