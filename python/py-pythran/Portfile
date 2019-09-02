@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-pythran
-version             0.9.3
+version             0.9.3.post1
 revision            0
 categories-append   devel math
 platforms           darwin
@@ -23,9 +23,9 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  421c1da123c38cbd016e83e834f4976477342d16 \
-                    sha256  217427a8225a331fdc8f3efe57871aed775cdf2c6e847a0a83df0aaae4b02493 \
-                    size    3588444
+checksums           rmd160  8416abc10721866490c0cbf097b81298ac92dc24 \
+                    sha256  3744eca3e2284aee3137c8995025bde7ea76d5b78fad6d26e709a8c167c5a61d \
+                    size    3590294
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
