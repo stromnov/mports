@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-shap
-version             0.30.0
+version             0.30.1
 revision            0
 categories-append   math science
 platforms           darwin
@@ -22,9 +22,9 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  54781d3b0a63b25e6ff4d64f1fbe42e9c311c1ad \
-                    sha256  38dfeb51be77b7be2fc2ad41167d7f984a36840c7dde251beada0b85d911894b \
-                    size    240988
+checksums           rmd160  2e4a2a1ced776e328f22bcfb5682068c1ad61f98 \
+                    sha256  182da11a88c95e4a9967cad935693a78ad7871ff0e3296992ec44762b8820c83 \
+                    size    244081
 
 if {${name} ne ${subport}} {
     depends_build-append \
