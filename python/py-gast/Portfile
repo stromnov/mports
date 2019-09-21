@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-gast
-version             0.3.1
+version             0.3.2
 revision            0
 categories-append   devel
 platforms           darwin
@@ -23,9 +23,9 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  12fad52f326f4659c716bea8348c6094e5667935 \
-                    sha256  cc987dad3bea3104cd1cc4832c7d864023eb4578043b63ee061c7b42febd4c16 \
-                    size    12966
+checksums           rmd160  d7a304998ddb70564acf8837cd93ce8741f864b8 \
+                    sha256  5c7617f1f6c8b8b426819642b16b9016727ddaecd16af9a07753e537eba8a3a5 \
+                    size    13657
 
 if {${name} ne ${subport}} {
     depends_build-append \
