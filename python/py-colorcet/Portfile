@@ -4,14 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-colorcet
-version             2.0.1
+version             2.0.2
 revision            0
 categories-append   math science
 platforms           darwin
 license             CC-BY
 supported_archs     noarch
 
-python.versions     36 37
+python.versions     36 37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -19,13 +19,10 @@ description         Collection of perceptually accurate colormaps.
 long_description    ${description}
 
 homepage            https://colorcet.pyviz.org/
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            ${python.rootname}-${version}
-
-checksums           rmd160  c91f467dab0589c987b492c3749fbddbe115e68f \
-                    sha256  ab1d16aba97f54af190631c7777c356b04b53de549672ff6b01c66d716eddff3 \
-                    size    2923181
+checksums           rmd160  8a74f700f365d9cc17c317a235266928816379c5 \
+                    sha256  514813790a74b578c3eaff76b2102274c2ba8b0239c9504586df685223007dee \
+                    size    2923900
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
