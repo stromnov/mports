@@ -4,14 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-datashader
-version             0.7.0
+version             0.8.0
 revision            0
 categories-append   math scienct
 platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     36 37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -19,13 +19,10 @@ description         Datashader is a data rasterization pipeline.
 long_description    ${description}
 
 homepage            http://datashader.org/
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            ${python.rootname}-${version}
-
-checksums           rmd160  c143c3261867164a25c42c8297f626243c411773 \
-                    sha256  5baf218713dc1ad4791f7bcf606ef8f618273945e788c59f9573aebd7cb851f8 \
-                    size    25159770
+checksums           rmd160  6953f08ec010154c49796a294ec9ce0125c6515e \
+                    sha256  59ac9e3830167d07b350992402a9f547f26eca45cd69a0fb04061a4047e7ff2a \
+                    size    30172251
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
