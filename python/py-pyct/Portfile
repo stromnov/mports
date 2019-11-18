@@ -11,7 +11,7 @@ platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     36 37
+python.versions     36 37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -19,9 +19,6 @@ description         Python package common tasks for users.
 long_description    ${description}
 
 homepage            https://ioam.github.io/parambokeh
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
-
-distname            ${python.rootname}-${version}
 
 checksums           rmd160  dcfd6809f2c13991a7838316d0c5af6f33178850 \
                     sha256  df7b2d29f874cabdbc22e4f8cba2ceb895c48aa33da4e0fe679e89873e0a4c6e \
