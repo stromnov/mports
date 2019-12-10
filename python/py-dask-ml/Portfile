@@ -4,14 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-dask-ml
-version             1.0.0
+version             1.1.1
 revision            0
 categories-append   math science
 platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     36 37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -19,13 +19,10 @@ description         Library for distributed and parallel machine learning using 
 long_description    ${description}
 
 homepage            https://github.com/dask/dask-ml
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            ${python.rootname}-${version}
-
-checksums           rmd160  672fdcb9118628310243c2e4bc376e0b4978ffd1 \
-                    sha256  dde926478653bd03a3fbc501d3873a1534836608217b94d04320d1e1c07e59dc \
-                    size    138194
+checksums           rmd160  aab638143ff29406ed43e490bafbb24d7f34d71e \
+                    sha256  fd8830543f1be6024b1342b64ecff58b3dc9c891ee856a5c5b598006d34a4df9 \
+                    size    141390
 
 if {${name} ne ${subport}} {
     depends_build-append \
