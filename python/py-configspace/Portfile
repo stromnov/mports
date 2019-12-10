@@ -4,13 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-configspace
-version             0.4.10
+python.rootname     ConfigSpace
+version             0.4.11
 revision            0
 categories-append   devel textproc
 platforms           darwin
 license             BSD
 
-python.versions     37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -18,13 +19,10 @@ description         Creation and manipulation of parameter configuration spaces.
 long_description    ${description}
 
 homepage            https://github.com/automl/ConfigSpace
-master_sites        pypi:C/ConfigSpace
 
-distname            ConfigSpace-${version}
-
-checksums           rmd160  537351f095615cde08061ff2a3db3df2a7b6d845 \
-                    sha256  108204939101feabf7ca7a4c794824a82ba1d125fe0e4f8eba484a82ee5a7d96 \
-                    size    882191
+checksums           rmd160  9050bcc939bc3e3270724cab5744857ecb3c290c \
+                    sha256  4b10e600f4f7af1fc07c1175e78f6faabd98247d02c68d01c876324453de14fa \
+                    size    957259
 
 if {${name} ne ${subport}} {
     depends_build-append \
