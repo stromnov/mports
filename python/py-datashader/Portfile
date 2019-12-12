@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-datashader
-version             0.8.0
+version             0.9.0
 revision            0
 categories-append   math scienct
 platforms           darwin
@@ -20,9 +20,9 @@ long_description    ${description}
 
 homepage            http://datashader.org/
 
-checksums           rmd160  6953f08ec010154c49796a294ec9ce0125c6515e \
-                    sha256  59ac9e3830167d07b350992402a9f547f26eca45cd69a0fb04061a4047e7ff2a \
-                    size    30172251
+checksums           rmd160  f7c9ff0bcefcf18611a9f2d1234da89fdb41cdf4 \
+                    sha256  3a423d61014ae8d2668848edab6c12a6244be6f249570bd7811dd5698d5ff633 \
+                    size    30184745
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
