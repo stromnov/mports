@@ -4,13 +4,13 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-shap
-version             0.31.0
+version             0.33.0
 revision            0
 categories-append   math science
 platforms           darwin
 license             MIT
 
-python.versions     36 37 38
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -18,13 +18,10 @@ description         SHAP is a unified approach to explain the output of any ML m
 long_description    ${description}
 
 homepage            http://github.com/slundberg/shap
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            ${python.rootname}-${version}
-
-checksums           rmd160  fddb1eac519c978f0e7865723fb728de4654bc0e \
-                    sha256  981a79ad451526cba1b6a63d6c2267e9451a17a6fecfbbd904f95c4db048d180 \
-                    size    257324
+checksums           rmd160  f42e92ffc9eaefcc0ff990345dfbe3dacd30d2f3 \
+                    sha256  1b037f8c4e373b4bcd43bbf27750ce2bb451ef8855326c589c5103687f18b9ff \
+                    size    263453
 
 if {${name} ne ${subport}} {
     depends_build-append \
