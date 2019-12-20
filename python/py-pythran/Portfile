@@ -4,14 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-pythran
-version             0.9.3.post1
+version             0.9.4.post1
 revision            0
 categories-append   devel math
 platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     27 36 37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -19,13 +19,10 @@ description         An ahead of time compiler for a subset of the Python languag
 long_description    ${description}
 
 homepage            https://github.com/serge-sans-paille/pythran
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            ${python.rootname}-${version}
-
-checksums           rmd160  8416abc10721866490c0cbf097b81298ac92dc24 \
-                    sha256  3744eca3e2284aee3137c8995025bde7ea76d5b78fad6d26e709a8c167c5a61d \
-                    size    3590294
+checksums           rmd160  df40dbe29558c43c7c6fcb4c8a25e23a675c443f \
+                    sha256  3842fefbb2374a28f8bb3e1ca9403513299438deb07608a5d76b1ae7b4fd24c0 \
+                    size    3631638
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
