@@ -4,14 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-lime
-version             0.1.1.36
+version             0.1.1.37
 revision            0
 categories-append   science
 platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -19,13 +19,10 @@ description         Local Interpretable Model-Agnostic Explanations for machine 
 long_description    ${description}
 
 homepage            http://github.com/marcotcr/lime
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            ${python.rootname}-${version}
-
-checksums           rmd160  cc8a25b074e5d4576e3d7c1abb678b63466d079a \
-                    sha256  605f9a5d28abc2e478c921e94d11085ef1ca275699e7278dc1b0215bae5d6679 \
-                    size    275948
+checksums           rmd160  1e71c783f80c4d9abb12de7439ff9d7ca1227a71 \
+                    sha256  54e27c309b73d2df9b1a16253312d6a9914a64cc1f2319dec6cd0797715619fc \
+                    size    275969
 
 if {${name} ne ${subport}} {
     depends_build-append \
