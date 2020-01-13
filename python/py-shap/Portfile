@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-shap
-version             0.33.0
+version             0.34.0
 revision            0
 categories-append   math science
 platforms           darwin
@@ -19,9 +19,9 @@ long_description    ${description}
 
 homepage            http://github.com/slundberg/shap
 
-checksums           rmd160  f42e92ffc9eaefcc0ff990345dfbe3dacd30d2f3 \
-                    sha256  1b037f8c4e373b4bcd43bbf27750ce2bb451ef8855326c589c5103687f18b9ff \
-                    size    263453
+checksums           rmd160  3ef49ca4767b99221b126acfcb04f9367f96945a \
+                    sha256  9fcfa1d99274a7f4ad81d74b64798c05fad793805dd8559374eadfb09a691c6d \
+                    size    264162
 
 if {${name} ne ${subport}} {
     depends_build-append \
