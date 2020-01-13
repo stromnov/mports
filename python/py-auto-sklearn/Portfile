@@ -4,13 +4,13 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-auto-sklearn
-version             0.5.2
+version             0.6.0
 revision            0
 categories-append   science
 platforms           darwin
 license             BSD
 
-python.versions     37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -22,9 +22,9 @@ master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 distname            ${python.rootname}-${version}
 
-checksums           rmd160  6c3fb24710cbc415966d1586f8f091d70c7521f1 \
-                    sha256  d9bd91b964664b6e8983d6ecfb757e01af5f0113c2909009ff5b11d503b49c38 \
-                    size    3408370
+checksums           rmd160  6b0db36a2cd9f3a83b8465e543c98e2dcd1683b0 \
+                    sha256  32f483c423298c51e8d0f840f09a8521a9bc65c2adadc3633fe8c30d0e4a1a90 \
+                    size    3938487
 
 if {${name} ne ${subport}} {
     #patchfiles-append   patch-setup.py.diff
