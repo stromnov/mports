@@ -10,7 +10,7 @@ categories-append   math
 platforms           darwin
 license             Apache
 
-python.versions     36 37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -18,9 +18,6 @@ description         Scalable, Portable and Distributed Gradient Boosting (GBDT, 
 long_description    ${description}
 
 homepage            https://xgboost.ai/
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
-
-distname            ${python.rootname}-${version}
 
 checksums           rmd160  24908b3ac2f1f65a73ab136ecd4a1dea4a3cb161 \
                     sha256  d69f90d61a63e8889fd39a31ad00c629bac1ca627f8406b9b6d4594c9e29ab84 \
