@@ -12,7 +12,7 @@ platforms           darwin
 license             MIT
 supported_archs     noarch
 
-python.versions     37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -20,9 +20,6 @@ description         Library to limit the resources used by a function.
 long_description    ${description}
 
 homepage            https://github.com/sfalkner/pynisher
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
-
-distname            ${python.rootname}-${version}
 
 checksums           rmd160  bb8a673c5a01e0678f0205e598dc9210b461d76a \
                     sha256  1b1079315ad1009de108c9ad701f6ae5274264e64503fc22c2de366d99953f34 \
