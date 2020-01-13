@@ -11,7 +11,7 @@ platforms           darwin
 license             MIT
 supported_archs     noarch
 
-python.versions     37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -19,11 +19,8 @@ description         Sobol sequence generator.
 long_description    ${description}
 
 homepage            https://github.com/naught101/sobol_seq
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 use_zip             yes
-
-distname            ${python.rootname}-${version}
 
 checksums           rmd160  054582495d0044c7e25479eda6d3cb585628c1b2 \
                     sha256  1b1c7a7666f7a96121107e6541b615376909b045aa1a63c3f9cbc3650b675de6 \
