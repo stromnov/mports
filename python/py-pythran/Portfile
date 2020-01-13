@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-pythran
-version             0.9.4.post1
+version             0.9.5
 revision            0
 categories-append   devel math
 platforms           darwin
@@ -20,9 +20,9 @@ long_description    ${description}
 
 homepage            https://github.com/serge-sans-paille/pythran
 
-checksums           rmd160  df40dbe29558c43c7c6fcb4c8a25e23a675c443f \
-                    sha256  3842fefbb2374a28f8bb3e1ca9403513299438deb07608a5d76b1ae7b4fd24c0 \
-                    size    3631638
+checksums           rmd160  2edfb6ec22c6030a04a81097fca12fa44199ace2 \
+                    sha256  815a778d6889593c0b8ddf08052cff36a504ce4cc8bd8d7bfb856a212f91486e \
+                    size    3641823
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
