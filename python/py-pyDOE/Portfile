@@ -11,7 +11,7 @@ platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -19,11 +19,8 @@ description         Design of experiments for Python.
 long_description    ${description}
 
 homepage            https://github.com/tisimst/pyDOE
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
 use_zip             yes
-
-distname            ${python.rootname}-${version}
 
 checksums           rmd160  7869318faf9c7d9c29a4f7989d95624111f948c0 \
                     sha256  cbd6f14ae26d3c9f736013205f53ea1191add4567033c3ee77b7dd356566c4b6 \
