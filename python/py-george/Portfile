@@ -10,7 +10,7 @@ categories-append   math science
 platforms           darwin
 license             MIT
 
-python.versions     37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -18,9 +18,6 @@ description         Blazingly fast Gaussian Processes for regression.
 long_description    ${description}
 
 homepage            https://github.com/dfm/george
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
-
-distname            ${python.rootname}-${version}
 
 checksums           rmd160  40159641941ba227abb217898a34042e8a4a1305 \
                     sha256  175f1a8022430adab8bf8e5e0ffc3941e5f48ca831bd9460e69716cc2820e628 \
