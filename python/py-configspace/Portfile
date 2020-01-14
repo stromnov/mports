@@ -5,7 +5,7 @@ PortGroup           python 1.0
 
 name                py-configspace
 python.rootname     ConfigSpace
-version             0.4.11
+version             0.4.12
 revision            0
 categories-append   devel textproc
 platforms           darwin
@@ -20,9 +20,9 @@ long_description    ${description}
 
 homepage            https://github.com/automl/ConfigSpace
 
-checksums           rmd160  9050bcc939bc3e3270724cab5744857ecb3c290c \
-                    sha256  4b10e600f4f7af1fc07c1175e78f6faabd98247d02c68d01c876324453de14fa \
-                    size    957259
+checksums           rmd160  b9ea61caccbefb18481fe4ece113ac905786f296 \
+                    sha256  d9c30d34c1410c403df28dc6e89a6f19dfae179969ced167ef370a6b0ce9940d \
+                    size    966209
 
 if {${name} ne ${subport}} {
     depends_build-append \
