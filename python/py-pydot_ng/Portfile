@@ -5,14 +5,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-pydot_ng
-version             1.0.0
+version             2.0.0
 revision            0
 categories-append   devel graphics
 platforms           darwin
 license             MIT
 supported_archs     noarch
 
-python.versions     27 35
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -20,12 +20,10 @@ description         Python interface to Graphviz's Dot
 long_description    ${description}
 
 homepage            https://github.com/pydot/pydot-ng
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            ${python.rootname}-${version}
-
-checksums           rmd160  1e267a1cf2e5b2558ff77a6fb980e22647074af1 \
-                    sha256  c420ecd08ec34c76bec98fbc1956d58a8f0bbd7b4e1d2dc90664d9fd29471341
+checksums           rmd160  930bc5b5c177c43f97bc4c0da73afe83c5c1b5b4 \
+                    sha256  8c8073b97aa7030c28118961e2c6c92f046e4cb57aeba7df87146f7baa6530c5 \
+                    size    264162
 
 if {${name} ne ${subport}} {
     depends_build-append \
