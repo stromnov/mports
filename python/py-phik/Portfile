@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 PortGroup           github 1.0
 
-github.setup        KaveIO PhiK 0.9.8 v
+github.setup        KaveIO PhiK 0.9.10 v
 name                py-phik
 revision            0
 categories-append   math science
@@ -21,9 +21,9 @@ long_description    ${description}
 
 homepage            http://phik.rtfd.io/
 
-checksums           rmd160  ab1313d6ba3f4dbd39dae6d41c5566e036d8d627 \
-                    sha256  051ea2654550a171cdb855065a9c29beba25571a4f1c6007cb9aa88823be18e0 \
-                    size    610817
+checksums           rmd160  0cd58cf080637eb65beae09139f25fd3a6ae9098 \
+                    sha256  7440599122a7cd8bff96087cc0a544bd263bed411a99b07fa6955d3e71707a1c \
+                    size    611298
 
 if {${name} ne ${subport}} {
     depends_lib-append   port:py${python.version}-setuptools \
