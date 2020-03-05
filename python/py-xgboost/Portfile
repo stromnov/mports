@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-xgboost
-version             0.90
+version             1.0.2
 revision            0
 categories-append   math
 platforms           darwin
@@ -19,9 +19,9 @@ long_description    ${description}
 
 homepage            https://xgboost.ai/
 
-checksums           rmd160  24908b3ac2f1f65a73ab136ecd4a1dea4a3cb161 \
-                    sha256  d69f90d61a63e8889fd39a31ad00c629bac1ca627f8406b9b6d4594c9e29ab84 \
-                    size    676689
+checksums           rmd160  d029866774f35e9f1af06a19198c30f3c6576358 \
+                    sha256  74d0984ed4c338b4b72ff4855f07c12e73fe8c60122b5b303b6e59f7e207da67 \
+                    size    821198
 
 if {${name} ne ${subport}} {
     depends_build-append \
