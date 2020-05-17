@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-sobol_seq
-version             0.1.2
+version             0.2.0
 revision            0
 categories-append   math science
 platforms           darwin
@@ -20,11 +20,9 @@ long_description    ${description}
 
 homepage            https://github.com/naught101/sobol_seq
 
-use_zip             yes
-
-checksums           rmd160  054582495d0044c7e25479eda6d3cb585628c1b2 \
-                    sha256  1b1c7a7666f7a96121107e6541b615376909b045aa1a63c3f9cbc3650b675de6 \
-                    size    9663
+checksums           rmd160  8cb9841d114f6cb159b08e167a7f7dd6d319df16 \
+                    sha256  e16e701bd7b03ec6ce65b3a64c9205799f6a2d00c2054dd8c4ff4343f3981172 \
+                    size    6870
 
 if {${name} ne ${subport}} {
     depends_build-append \
