@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 PortGroup           github 1.0
 
-github.setup        KaveIO PhiK 0.9.12 v
+github.setup        KaveIO PhiK 0.10.0 v
 name                py-phik
 revision            0
 categories-append   math science
@@ -12,7 +12,7 @@ platforms           darwin
 license             Apache
 supported_archs     noarch
 
-python.versions     36 37 38
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -21,9 +21,9 @@ long_description    ${description}
 
 homepage            http://phik.rtfd.io/
 
-checksums           rmd160  2836f7022d464bfb68a65143401ced3813d165c6 \
-                    sha256  ffd428b6e4886cf3d9f4779f26238327ab9b05cb775fdd29762add902cdb2e8e \
-                    size    613885
+checksums           rmd160  0870e30268270b3d4e94ddc5ac0efd91f42f54ec \
+                    sha256  92e2187a9243b6a5a84ac6e59bb02cdd241800b057da68181023bbea5de8a496 \
+                    size    601832
 
 if {${name} ne ${subport}} {
     depends_lib-append   port:py${python.version}-setuptools \
