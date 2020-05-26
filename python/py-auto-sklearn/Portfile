@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-auto-sklearn
-version             0.6.0
+version             0.7.0
 revision            0
 categories-append   science
 platforms           darwin
@@ -18,17 +18,12 @@ description         Automated machine learning
 long_description    ${description}
 
 homepage            https://automl.github.io/auto-sklearn
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            ${python.rootname}-${version}
-
-checksums           rmd160  6b0db36a2cd9f3a83b8465e543c98e2dcd1683b0 \
-                    sha256  32f483c423298c51e8d0f840f09a8521a9bc65c2adadc3633fe8c30d0e4a1a90 \
-                    size    3938487
+checksums           rmd160  23babca9f078629e3e4b69d90aae7037b657ac03 \
+                    sha256  ec55c4c2c44f9690e95db318292bf8c7bb9706d133bb759542b573674308701a \
+                    size    4585658
 
 if {${name} ne ${subport}} {
-    #patchfiles-append   patch-setup.py.diff
-
     depends_build-append \
                         port:py${python.version}-setuptools \
                         port:py${python.version}-cython
