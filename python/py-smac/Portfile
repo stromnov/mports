@@ -4,14 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-smac
-version             0.11.1
+version             0.12.2
 revision            0
 categories-append   devel
 platforms           darwin
 license             BSD
 supported_archs     noarch
 
-python.versions     37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -19,34 +19,26 @@ description         SMAC3, a Python implementation of 'Sequential Model-based Al
 long_description    ${description}
 
 homepage            https://pypi.python.org/pypi/smac/
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            ${python.rootname}-${version}
-
-checksums           rmd160  efe566e12f6ca1da7336f2a7cce19fa3f3a70173 \
-                    sha256  015f1f54dea309cd2e581f08e134ca5e5c604cd56ed6a9295edc384914199695 \
-                    size    161313
+checksums           rmd160  224b8f400c35df134d56f9cc9146050a8e2c2c03 \
+                    sha256  02c6d969c8a0f208c32835dd3d53d362d7d1f334c7ef3b0f95c3471ab2311b7d \
+                    size    214982
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
-                        port:py${python.version}-cython \
                         port:py${python.version}-numpy \
                         port:py${python.version}-scipy \
-                        port:py${python.version}-six \
                         port:py${python.version}-psutil \
                         port:py${python.version}-pynisher \
                         port:py${python.version}-configspace \
                         port:py${python.version}-scikit-learn \
                         port:py${python.version}-pyrfr \
-                        port:py${python.version}-sphinx \
-                        port:py${python.version}-sphinx_rtd_theme \
-                        port:py${python.version}-joblib \
-                        port:py${python.version}-nose \
-                        port:py${python.version}-pyDOE \
                         port:py${python.version}-sobol_seq \
-                        port:py${python.version}-statsmodels \
+                        port:py${python.version}-joblib \
+                        port:py${python.version}-lazy_import \
                         port:py${python.version}-emcee \
-                        port:py${python.version}-george
+                        port:py${python.version}-scikit-optimize \
+                        port:py${python.version}-pyDOE
 
     livecheck.type      none
 }
