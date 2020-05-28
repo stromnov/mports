@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-dask-ml
-version             1.1.1
+version             1.5.0
 revision            0
 categories-append   math science
 platforms           darwin
@@ -20,9 +20,9 @@ long_description    ${description}
 
 homepage            https://github.com/dask/dask-ml
 
-checksums           rmd160  aab638143ff29406ed43e490bafbb24d7f34d71e \
-                    sha256  fd8830543f1be6024b1342b64ecff58b3dc9c891ee856a5c5b598006d34a4df9 \
-                    size    141390
+checksums           rmd160  9ded6c94d78fe1bb5d6ff69b46a4ca46527b09c2 \
+                    sha256  8a9879b7d1642ed8cd48115d81f92a246eb7ffeadc42748053c5339a56f569b4 \
+                    size    342933
 
 if {${name} ne ${subport}} {
     depends_build-append \
