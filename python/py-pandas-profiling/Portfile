@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-pandas-profiling
-version             2.4.0
+version             2.8.0
 revision            0
 categories-append   math science
 platforms           darwin
@@ -20,20 +20,30 @@ long_description    ${description}
 
 homepage            https://github.com/pandas-profiling/pandas-profiling
 
-checksums           rmd160  5d4ea6b2acf1db1b5e80125a296fb7b4f248ca3b \
-                    sha256  960e1250643ab2fec6adf334021ee67991e13cecad97b6f53557e45e9ce50f01 \
-                    size    150863
+checksums           rmd160  ac75af061e28c0588e88bbf2578e9acc057c4b8b \
+                    sha256  8b050d38ecfc324fe4159abcafbb4f84a3316af9274955d37accb1349a6f998b \
+                    size    213331
 
 if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-setuptools \
+                        port:py${python.version}-joblib \
+                        port:py${python.version}-scipy \
                         port:py${python.version}-pandas \
                         port:py${python.version}-matplotlib \
-                        port:py${python.version}-jinja2 \
-                        port:py${python.version}-missingno \
-                        port:py${python.version}-htmlmin \
-                        port:py${python.version}-phik \
                         port:py${python.version}-confuse \
-                        port:py${python.version}-astropy
+                        port:py${python.version}-jinja2 \
+                        port:py${python.version}-visions \
+                          port:py${python.version}-imagehash \
+                          port:py${python.version}-Pillow \
+                        port:py${python.version}-numpy \
+                        port:py${python.version}-htmlmin \
+                        port:py${python.version}-missingno \
+                        port:py${python.version}-phik \
+                        port:py${python.version}-astropy \
+                        port:py${python.version}-tangled_up_in_unicode \
+                        port:py${python.version}-requests \
+                        port:py${python.version}-tqdm \
+                        port:py${python.version}-ipywidgets
 
     livecheck.type      none
 }
