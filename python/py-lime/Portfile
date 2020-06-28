@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-lime
-version             0.1.1.37
+version             0.2.0.1
 revision            0
 categories-append   science
 platforms           darwin
@@ -20,9 +20,9 @@ long_description    ${description}
 
 homepage            http://github.com/marcotcr/lime
 
-checksums           rmd160  1e71c783f80c4d9abb12de7439ff9d7ca1227a71 \
-                    sha256  54e27c309b73d2df9b1a16253312d6a9914a64cc1f2319dec6cd0797715619fc \
-                    size    275969
+checksums           rmd160  344b3643fb06b6ed73f037e492fa774a7f3eaea0 \
+                    sha256  76960e4f055feb53e89b5022383bafc87b63f25bac6265984b0a333d1a57f781 \
+                    size    275719
 
 if {${name} ne ${subport}} {
     depends_build-append \
@@ -30,6 +30,8 @@ if {${name} ne ${subport}} {
     depends_lib-append  port:py${python.version}-matplotlib \
                         port:py${python.version}-numpy \
                         port:py${python.version}-scipy \
+                        port:py${python.version}-tqdm \
+                        port:py${python.version}-Pillow \
                         port:py${python.version}-scikit-learn \
                         port:py${python.version}-scikit-image
 
