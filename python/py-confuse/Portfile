@@ -4,14 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-confuse
-version             1.0.0
+version             1.3.0
 revision            0
 categories-append   devel
 platforms           darwin
 license             MIT
 supported_archs     noarch
 
-python.versions     36 37 38
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -20,9 +20,9 @@ long_description    ${description}
 
 homepage            https://github.com/beetbox/confuse
 
-checksums           rmd160  648f62d15f938aa55a25d03f244f65e92b7bf1d6 \
-                    sha256  5977c6a876b179f8c86ecaf530cc24bf00baaad028c3350b502ee6949536188c \
-                    size    32235
+checksums           rmd160  6b6515b31db051f47122c656d1c7737ce8d076a2 \
+                    sha256  f68a1c61fdb175b88e7a1466277c5b62bd039b722c1bbb72d42df24253d32b1f \
+                    size    37138
 
 if {${name} ne ${subport}} {
     depends_build-append \
