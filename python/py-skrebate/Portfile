@@ -4,14 +4,14 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-skrebate
-version             0.6
+version             0.61
 revision            0
 categories-append   math
 platforms           darwin
 license             MIT
 supported_archs     noarch
 
-python.versions     27 35 36 37
+python.versions     37 38
 
 maintainers         {stromnov @stromnov} openmaintainer
 
@@ -19,20 +19,18 @@ description         A suite of Relief-based feature selection algorithms.
 long_description    ${description}
 
 homepage            https://github.com/EpistasisLab/scikit-rebate
-master_sites        pypi:[string index ${python.rootname} 0]/${python.rootname}
 
-distname            ${python.rootname}-${version}
-
-checksums           rmd160  629ef0a751f2efbdc57d5c5eba72b47800365480 \
-                    sha256  87c7192349302581c85bb1e119088e25d62bc7be35a305ff52f8df2e5fd2f8c0 \
-                    size    19811
+checksums           rmd160  62217219b9646a8b4502970e704f6328f02093c9 \
+                    sha256  cb4441e6833ecf5e359f9e1048e78abf7859d8a5da249df6a7d1c80c3b99a5b4 \
+                    size    19821
 
 if {${name} ne ${subport}} {
     depends_build-append \
                         port:py${python.version}-setuptools
     depends_lib-append  port:py${python.version}-numpy \
                         port:py${python.version}-scipy \
-                        port:py${python.version}-scikit-learn
+                        port:py${python.version}-scikit-learn \
+                        port:py${python.version}-joblib
 
     livecheck.type      none
 }
