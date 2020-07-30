@@ -4,7 +4,7 @@ PortSystem          1.0
 PortGroup           python 1.0
 
 name                py-dask-ml
-version             1.5.0
+version             1.6.0
 revision            0
 categories-append   math science
 platforms           darwin
@@ -20,9 +20,9 @@ long_description    ${description}
 
 homepage            https://github.com/dask/dask-ml
 
-checksums           rmd160  9ded6c94d78fe1bb5d6ff69b46a4ca46527b09c2 \
-                    sha256  8a9879b7d1642ed8cd48115d81f92a246eb7ffeadc42748053c5339a56f569b4 \
-                    size    342933
+checksums           rmd160  bff87fa9cb6b01c085e16956f82f694295b1e5ca \
+                    sha256  ce686b7fd49b3f876d651c87e8468ad71bcd2707399140d6baf198184c45d970 \
+                    size    346079
 
 if {${name} ne ${subport}} {
     depends_build-append \
@@ -30,6 +30,8 @@ if {${name} ne ${subport}} {
                         port:py${python.version}-setuptools_scm
     depends_lib-append  port:py${python.version}-dask \
                         port:py${python.version}-toolz \
+                        port:py${python.version}-partd \
+                        port:py${python.version}-fsspec \
                         port:py${python.version}-distributed \
                         port:py${python.version}-numba \
                         port:py${python.version}-numpy \
